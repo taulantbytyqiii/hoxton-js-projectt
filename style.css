@@ -1,8 +1,78 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*  Header Styling  */
+header {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: auto 1fr auto;
+  gap: 20px;
+  place-items: center;
+  height: 80px;
+  width: 100%;
+  padding: 0px 50px;
+  background-color: #2860f2;
+  position: fixed;
+}
+.header__logo {
+  font-size: 32px;
+  font-family: "Edu VIC WA NT Beginner", cursive;
+  color: white;
+  text-decoration: none;
+}
+.header__search {
+  background-color: white;
+  width: 100%;
+  height: 45px;
+  max-width: 700px;
+  border-radius: 2px;
+  padding: 0px 10px;
+}
+.search-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  width: 100%;
+  height: 100%;
+  border: none;
+  align-items: center;
+}
+.search-input {
+  border: none;
+  font-size: 15px;
+  outline: none;
+  height: 100%;
+}
+.search-icon {
+  cursor: pointer;
+  color: rgb(128, 122, 122);
+}
+.header__right-side-items {
+  display: grid;
+  grid-auto-flow: column;
+  place-items: center;
+  gap: 20px;
+  color: white;
+  font-size: 16px;
+  font-family: roboto;
+}
+.header__right-side-no-user {
+  display: grid;
+  grid-auto-flow: column;
+  justify-items: start;
+  align-items: baseline;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 500;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  gap: 7px;
+}
+.header__right-side-no-user:hover .dif {
+  color: rgb(255, 254, 244);
+}
+.profile-avatar {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
 }
