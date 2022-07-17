@@ -7,7 +7,8 @@
       "image": "https://i.ebayimg.com/images/g/BWcAAOSwxdZiMK81/s-l640.jpg",
       "price": 230,
       "dateEntered": "2021/08/10",
-      "stock": 10
+      "stock": 10,
+      "sold": 27
     },
     {
       "id": 2,
@@ -16,7 +17,8 @@
       "image": "https://m.media-amazon.com/images/I/71PGvPXpk5L._SL1500_.jpg",
       "price": 120,
       "dateEntered": "2021/08/10",
-      "stock": 10
+      "stock": 10,
+      "sold": 5
     },
     {
       "id": 3,
@@ -25,7 +27,8 @@
       "image": "https://img.hollisterco.com/is/image/anf/KIC_331-7300-1302-276_prod1?policy=product-large",
       "price": 49.99,
       "dateEntered": "2021/08/10",
-      "stock": 10
+      "stock": 10,
+      "sold": 4
     },
     {
       "id": 4,
@@ -34,7 +37,8 @@
       "image": "https://img.hollisterco.com/is/image/anf/KIC_323-2096-3058-100_model2?policy=product-large",
       "price": 30,
       "dateEntered": "2021/08/10",
-      "stock": 10
+      "stock": 10,
+      "sold": 190
     },
     {
       "id": 5,
@@ -43,7 +47,8 @@
       "image": "https://snpi.dell.com/snp/images/products/large/en-us~210-BCYE_V2/210-BCYE_V2.jpg",
       "price": 1200,
       "dateEntered": "2021/08/10",
-      "stock": 6
+      "stock": 6,
+      "sold": 12
     },
     {
       "id": 6,
@@ -52,7 +57,8 @@
       "image": "https://snpi.dell.com/snp/images/products/large/en-us~210-AXVG_v1/210-AXVG_v1.jpg",
       "price": 500,
       "dateEntered": "2021/08/10",
-      "stock": 4
+      "stock": 4,
+      "sold": 48
     },
     {
       "id": 7,
@@ -61,7 +67,8 @@
       "image": "https://img.hollisterco.com/is/image/anf/KIC_340-2137-0653-700_prod1?policy=product-large",
       "price": 30,
       "dateEntered": "2021/08/10",
-      "stock": 20
+      "stock": 2,
+      "sold": 2
     }
   ]
 }
