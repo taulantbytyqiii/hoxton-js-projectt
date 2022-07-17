@@ -1,0 +1,67 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "categories": "technology cellphones",
+      "name": "Apple iPhone 11",
+      "image": "https://i.ebayimg.com/images/g/BWcAAOSwxdZiMK81/s-l640.jpg",
+      "price": 230,
+      "dateEntered": "2021/08/10",
+      "stock": 10
+    },
+    {
+      "id": 2,
+      "categories": "technology gamingconsoles gaming",
+      "name": "Sony Playstation 4",
+      "image": "https://m.media-amazon.com/images/I/71PGvPXpk5L._SL1500_.jpg",
+      "price": 120,
+      "dateEntered": "2021/08/10",
+      "stock": 10
+    },
+    {
+      "id": 3,
+      "categories": "clothes men jeans",
+      "name": "DARK WASH BOOT JEANS",
+      "image": "https://img.hollisterco.com/is/image/anf/KIC_331-7300-1302-276_prod1?policy=product-large",
+      "price": 49.99,
+      "dateEntered": "2021/08/10",
+      "stock": 10
+    },
+    {
+      "id": 4,
+      "categories": "clothes men",
+      "name": "LOGO GRAPHIC TEE 5-PACK",
+      "image": "https://img.hollisterco.com/is/image/anf/KIC_323-2096-3058-100_model2?policy=product-large",
+      "price": 30,
+      "dateEntered": "2021/08/10",
+      "stock": 10
+    },
+    {
+      "id": 5,
+      "categories": "technology gaming",
+      "name": "Alienware 34 Curved QD-OLED Gaming Monitor - AW3423DW",
+      "image": "https://snpi.dell.com/snp/images/products/large/en-us~210-BCYE_V2/210-BCYE_V2.jpg",
+      "price": 1200,
+      "dateEntered": "2021/08/10",
+      "stock": 6
+    },
+    {
+      "id": 6,
+      "categories": "technology gaming",
+      "name": "Alienware 38 Curved Gaming Monitor - AW3821DW",
+      "image": "https://snpi.dell.com/snp/images/products/large/en-us~210-AXVG_v1/210-AXVG_v1.jpg",
+      "price": 500,
+      "dateEntered": "2021/08/10",
+      "stock": 4
+    },
+    {
+      "id": 7,
+      "categories": "clothing women",
+      "name": "OVERSIZED LINEN BLEND SHORT-SLEEVE SHIRT",
+      "image": "https://img.hollisterco.com/is/image/anf/KIC_340-2137-0653-700_prod1?policy=product-large",
+      "price": 30,
+      "dateEntered": "2021/08/10",
+      "stock": 20
+    }
+  ]
+}
