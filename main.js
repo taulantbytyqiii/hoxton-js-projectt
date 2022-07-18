@@ -20,9 +20,12 @@ let modal = document.querySelector(".modal");
 //Main render function
 
 function render() {
+  prodSec.innerHTML = "";
   if (!header.childNodes.length) createHeader();
   for (let product of state.products) {
-    prodSec.appendChild(createProduct(product));
+    if (filterProducts(product)) {
+      prodSec.appendChild(createProduct(product));
+    }
   }
 }
 // Get the products from database and call render();
@@ -138,9 +141,27 @@ function createProduct(product) {
 //Filter function that determines whether a product should be displayed
 
 function filterProducts(product) {
-  if (state.searchInput === "" && state.categories === null) return;
-  if (state.searchInput !== "" && state.categories !== null) {
-    if (product.name.includes(state.searchInput)) {
+  if (state.searchInput === "" && state.categories.length === 0) return product;
+  if (state.searchInput !== "" && state.categories.length !== 0) {
+    if (product.name.toLowerCase().includes(state.searchInput)) {
+      for (let category of product.categories) {
+        if (product.categories.includes(category)) {
+          return product;
+        }
+      }
+    }
+  } else if (state.searchInput !== "") {
+    if (product.name.toLowerCase().includes(state.searchInput)) {
+      return product;
+    }
+  } else if (state.categories.length !== 0) {
+    for (let category of state.categories) {
+      if (product.categories.includes(category)) {
+        return product;
+      }
     }
   }
+  return null;
 }
+
+//Function to get the input from search-bar
