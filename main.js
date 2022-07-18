@@ -27,6 +27,7 @@ function render() {
       prodSec.appendChild(createProduct(product));
     }
   }
+  state.searchInput = "";
 }
 // Get the products from database and call render();
 getProducts();
@@ -45,6 +46,10 @@ function createHeader() {
   headerSearchDiv.className = "header__search";
   let searchForm = document.createElement("form");
   searchForm.className = "search-form";
+  searchForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    getSearchInput(searchInput.value);
+  });
   let searchInput = document.createElement("input");
   searchInput.className = "search-input";
   searchInput.placeholder = "Search products";
@@ -165,3 +170,8 @@ function filterProducts(product) {
 }
 
 //Function to get the input from search-bar
+
+function getSearchInput(inputValue) {
+  state.searchInput = inputValue;
+  render();
+}
