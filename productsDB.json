@@ -1,6 +1,7 @@
 {
   "products": [
     {
+      "seller": "asd",
       "id": 1,
       "categories": "technology cellphones",
       "name": "Apple iPhone 11",
@@ -70,5 +71,6 @@
       "stock": 2,
       "sold": 2
     }
-  ]
+  ],
+  "categories": {}
 }

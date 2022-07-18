@@ -107,6 +107,39 @@ main {
   width: 290px;
   background-color: white;
   border-radius: 9px;
+  padding: 30px;
+}
+.filters-section * {
+  font-family: Helvetica, sans-serif;
+  font-weight: lighter;
+  font-size: 15px;
+  cursor: pointer;
+}
+.filters-section h3 {
+  margin-top: 15px;
+}
+.filters-section li {
+  margin-top: 7px;
+  margin-left: 15px;
+  list-style: none;
+}
+.sort-form {
+  margin-top: 8px;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 5px;
+}
+.sort-by-price-input {
+  cursor: auto;
+  width: 100%;
+  border: 1px solid black;
+  padding: 5px;
+}
+.sort-by-seller-input {
+  cursor: auto;
+  border: 1px solid black;
+  width: 100%;
+  padding: 5px;
 }
 .just-there {
   width: 290px;

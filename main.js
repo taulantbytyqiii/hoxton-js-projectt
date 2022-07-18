@@ -4,8 +4,12 @@
 
 let state = {
   products: [],
-  userLoged: false,
-  categories: [],
+  userLoged: true,
+  mainCategories: {
+    Clothes: [],
+    Smartphones: [],
+  },
+  selectedCategories: [],
   searchInput: "",
 };
 
@@ -146,8 +150,9 @@ function createProduct(product) {
 //Filter function that determines whether a product should be displayed
 
 function filterProducts(product) {
-  if (state.searchInput === "" && state.categories.length === 0) return product;
-  if (state.searchInput !== "" && state.categories.length !== 0) {
+  if (state.searchInput === "" && state.selectedCategories.length === 0)
+    return product;
+  if (state.searchInput !== "" && state.selectedCategories.length !== 0) {
     if (product.name.toLowerCase().includes(state.searchInput)) {
       for (let category of product.categories) {
         if (product.categories.includes(category)) {
@@ -159,8 +164,8 @@ function filterProducts(product) {
     if (product.name.toLowerCase().includes(state.searchInput)) {
       return product;
     }
-  } else if (state.categories.length !== 0) {
-    for (let category of state.categories) {
+  } else if (state.selectedCategories.length !== 0) {
+    for (let category of state.selectedCategories) {
       if (product.categories.includes(category)) {
         return product;
       }
