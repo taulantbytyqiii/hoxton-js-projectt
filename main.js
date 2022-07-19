@@ -19,6 +19,7 @@ let header = document.querySelector(".header");
 let filterAside = document.querySelector(".filters-section");
 let prodSec = document.querySelector(".products-section");
 let footer = document.querySelector("footer");
+
 let modal = document.querySelector(".modal");
 
 //Main render function
@@ -123,6 +124,10 @@ function createFooter() {
   //     <a href="policies_footer_a">Policies</a>
   //   </div>
   //
+
+  if (footer === null) return
+    
+  
   let divEl = document.createElement("div");
   divEl.className = "back_to_top";
   let buttonEl = document.createElement("button");
@@ -162,6 +167,9 @@ function createFooter() {
   footer.append(divEl, footerA);
 
 }
+
+createFooter();
+
 
 
 
