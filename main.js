@@ -4,11 +4,9 @@
 
 let state = {
   products: [],
-  userLoged: true,
-  mainCategories: {
-    Clothes: [],
-    Smartphones: [],
-  },
+  userLoged: false,
+  selectedCategory: "",
+  mainCategories: [],
   selectedCategories: [],
   searchInput: "",
 };
@@ -22,7 +20,7 @@ let footer = document.querySelector("footer");
 let modal = document.querySelector(".modal");
 
 //Main render function
-
+getCategories();
 function render() {
   prodSec.innerHTML = "";
   if (!header.childNodes.length) createHeader();
@@ -32,8 +30,11 @@ function render() {
     }
   }
   state.searchInput = "";
+
+  if (filterAside.childNodes.length === 5) renderCategories();
 }
 // Get the products from database and call render();
+
 getProducts();
 
 //The function to create the header
@@ -172,8 +173,129 @@ function getProducts() {
     .then((resp) => resp.json())
     .then((products) => {
       state.products = products;
+      // getCategories();
       render();
     });
+}
+//Function to get the categories
+
+function getCategories() {
+  fetch("http://localhost:3006/categories")
+    .then((resp) => resp.json())
+    .then((categories) => {
+      state.mainCategories = categories;
+    });
+}
+//Function to render the categories filter
+function getSubCategories(index, ulEl, divEl) {
+  state.selectedCategories = [];
+  for (let i = 0; i < state.mainCategories[index].length - 1; i++) {
+    let categoryTitle = document.createElement("li");
+    categoryTitle.textContent = state.mainCategories[index][i];
+    categoryTitle.addEventListener("click", function () {
+      if (
+        state.selectedCategories.includes(
+          categoryTitle.textContent.toLocaleLowerCase()
+        )
+      ) {
+        for (let j = 0; j < state.selectedCategories.length; j++) {
+          if (
+            state.selectedCategories[j] ===
+            categoryTitle.textContent.toLocaleLowerCase()
+          ) {
+            let a =
+              state.selectedCategories[state.selectedCategories.length - 1];
+            state.selectedCategories[state.selectedCategories.length - 1] =
+              state.selectedCategories[j];
+            state.selectedCategories[j] = a;
+            state.selectedCategories.pop();
+            break;
+          }
+        }
+
+        categoryTitle.className = "";
+      } else {
+        state.selectedCategories.push(
+          categoryTitle.textContent.toLocaleLowerCase()
+        );
+        categoryTitle.className = "selected-category";
+      }
+      console.log(state.selectedCategories);
+      render();
+    });
+
+    ulEl.appendChild(categoryTitle);
+  }
+  let goBack = document.createElement("h4");
+  goBack.textContent = "Remove filters";
+  goBack.addEventListener("click", function () {
+    state.selectedCategory = "";
+    state.selectedCategories = [];
+    divEl.textContent = "";
+    state.searchInput = "";
+    document.querySelector(".search-form").reset();
+    goBack.remove();
+    renderCategories();
+    render();
+  });
+  filterAside.appendChild(goBack);
+}
+function renderCategories() {
+  let divEl = document.createElement("div");
+  divEl.className = "categories-wrapper";
+  let h2El = document.createElement("h2");
+  h2El.textContent = "Shop by Category";
+  let ulEl = document.createElement("ul");
+  divEl.appendChild(h2El);
+  for (let j = 0; j < state.mainCategories.length; j++) {
+    let bigCat = state.mainCategories[j].length - 1;
+    let catTitle = state.mainCategories[j][bigCat];
+    let categoryTitle = document.createElement("li");
+    categoryTitle.textContent = catTitle;
+    categoryTitle.addEventListener("click", () => {
+      state.selectedCategories = [];
+      state.selectedCategories.push(
+        categoryTitle.textContent.toLocaleLowerCase()
+      );
+      state.selectedCategory = categoryTitle.textContent.toLocaleLowerCase();
+      h2El.textContent = catTitle;
+      ulEl.textContent = "";
+
+      render();
+      getSubCategories(j, ulEl, divEl);
+    });
+    ulEl.appendChild(categoryTitle);
+    // for (let i = 0; i < state.mainCategories[j].length - 1; i++) {
+    //   let clicked = false;
+    //   let category = document.createElement("li");
+    //   category.textContent = state.mainCategories[j][i];
+    //   category.addEventListener("click", () => {
+    //     if (state.selectedCategory !== "") {
+    //       if (state.selectedCategory !== catTitle) {
+    //         state.selectedCategory = catTitle;
+    //         state.selectedCategories = [];
+    //         state.selectedCategories.push(category);
+    //         document.querySelectorAll(".selected-category").className = "";
+    //         category.className = "selected-category";
+    //         clicked = !clicked;
+    //       } else {
+    //         if (!clicked) {
+    //           state.selectedCategories.push(e.target.value);
+    //           category.className = "selected-category";
+    //           clicked = !clicked;
+    //         } else {
+    //           category.className = "";
+    //           state.selectedCategories[i] = "";
+    //         }
+    //       }
+    //     }
+    //   });
+    //   ulEl.appendChild(category);
+    // }
+  }
+
+  divEl.appendChild(ulEl);
+  filterAside.prepend(divEl);
 }
 
 //Function to create single product
