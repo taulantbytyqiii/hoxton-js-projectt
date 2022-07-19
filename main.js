@@ -9,6 +9,8 @@ let state = {
   mainCategories: [],
   selectedCategories: [],
   searchInput: "",
+  sortByPrice: [],
+  sortBySeller: "",
 };
 
 //Variables for the different parts of the page
@@ -25,11 +27,10 @@ function render() {
   prodSec.innerHTML = "";
   if (!header.childNodes.length) createHeader();
   for (let product of state.products) {
-    if (filterProducts(product)) {
+    if (filter(product)) {
       prodSec.appendChild(createProduct(product));
     }
   }
-  state.searchInput = "";
 
   if (filterAside.childNodes.length === 5) renderCategories();
 }
@@ -164,10 +165,15 @@ function getSubCategories(index, ulEl, divEl) {
   let goBack = document.createElement("h4");
   goBack.textContent = "Remove filters";
   goBack.addEventListener("click", function () {
+    document.querySelector(".from").value = "";
+    document.querySelector(".to").value = "";
+    document.querySelector(".sort-by-seller-input").value = "";
     state.selectedCategory = "";
     state.selectedCategories = [];
     divEl.textContent = "";
     state.searchInput = "";
+    state.sortByPrice = [];
+    state.sortBySeller = "";
     document.querySelector(".search-form").reset();
     goBack.remove();
     renderCategories();
@@ -189,44 +195,14 @@ function renderCategories() {
     categoryTitle.textContent = catTitle;
     categoryTitle.addEventListener("click", () => {
       state.selectedCategories = [];
-      state.selectedCategories.push(
-        categoryTitle.textContent.toLocaleLowerCase()
-      );
       state.selectedCategory = categoryTitle.textContent.toLocaleLowerCase();
       h2El.textContent = catTitle;
       ulEl.textContent = "";
-
+      console.log(state.searchInput);
       render();
       getSubCategories(j, ulEl, divEl);
     });
     ulEl.appendChild(categoryTitle);
-    // for (let i = 0; i < state.mainCategories[j].length - 1; i++) {
-    //   let clicked = false;
-    //   let category = document.createElement("li");
-    //   category.textContent = state.mainCategories[j][i];
-    //   category.addEventListener("click", () => {
-    //     if (state.selectedCategory !== "") {
-    //       if (state.selectedCategory !== catTitle) {
-    //         state.selectedCategory = catTitle;
-    //         state.selectedCategories = [];
-    //         state.selectedCategories.push(category);
-    //         document.querySelectorAll(".selected-category").className = "";
-    //         category.className = "selected-category";
-    //         clicked = !clicked;
-    //       } else {
-    //         if (!clicked) {
-    //           state.selectedCategories.push(e.target.value);
-    //           category.className = "selected-category";
-    //           clicked = !clicked;
-    //         } else {
-    //           category.className = "";
-    //           state.selectedCategories[i] = "";
-    //         }
-    //       }
-    //     }
-    //   });
-    //   ulEl.appendChild(category);
-    // }
   }
 
   divEl.appendChild(ulEl);
@@ -272,6 +248,8 @@ function createProduct(product) {
 //Filter function that determines whether a product should be displayed
 
 function filterProducts(product) {
+  if (state.selectedCategory !== "" && state.selectedCategories.length === 0) {
+  }
   if (state.searchInput === "" && state.selectedCategories.length === 0)
     return product;
   if (state.searchInput !== "" && state.selectedCategories.length !== 0) {
@@ -295,6 +273,46 @@ function filterProducts(product) {
   }
   return null;
 }
+function filter(product) {
+  // console.log(state.searchInput);
+  // console.log(state.selectedCategory);
+  // console.log(state.selectedCategories);
+  // console.log(state.sortByPrice);
+  // console.log(state.sortBySeller);
+  if (state.searchInput) {
+    if (!product.name.toLocaleLowerCase().includes(state.searchInput))
+      return false;
+  }
+  if (state.selectedCategory && state.selectedCategories.length === 0) {
+    if (!product.categories.includes(state.selectedCategory)) return false;
+  }
+  if (state.selectedCategories.length !== 0) {
+    let a = false;
+    for (let cat of state.selectedCategories) {
+      console.log(cat);
+      if (product.categories.includes(cat)) a = true;
+    }
+    console.log(a);
+    if (a === false) return false;
+  }
+  // if (state.sortByPrice[0]) {
+  //   console.log(state.sortByPrice[0]);
+  // }
+  if (state.sortByPrice.length !== 0) {
+    if (
+      !(
+        product.price >= state.sortByPrice[0] &&
+        product.price <= state.sortByPrice[1]
+      )
+    ) {
+      return false;
+    }
+  }
+  if (state.sortBySeller) {
+    if (!(product.seller === state.sortBySeller)) return false;
+  }
+  return product;
+}
 
 //Function to get the input from search-bar
 
@@ -302,3 +320,28 @@ function getSearchInput(inputValue) {
   state.searchInput = inputValue;
   render();
 }
+
+//Adding eventlisteners to sort by price and by seller forms
+document.querySelector(".sort-price").addEventListener("submit", (e) => {
+  e.preventDefault();
+  let from = Number(document.querySelector(".from").value);
+  let to = Number(document.querySelector(".to").value);
+  if (from > to || (from === 0 && to === 0) || (from < 0 && to < 0)) {
+    state.sortByPrice = [];
+    render();
+    return;
+  }
+  if (from < 0) {
+    state.sortByPrice[0] = 0;
+    state.sortByPrice[1] = to;
+  }
+  state.sortByPrice[0] = from;
+  state.sortByPrice[1] = to;
+  render();
+});
+document.querySelector(".sort-seller").addEventListener("submit", (e) => {
+  e.preventDefault();
+  let seller = document.querySelector(".sort-by-seller-input").value;
+  state.sortBySeller = seller;
+  render();
+});
