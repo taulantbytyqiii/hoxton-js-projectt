@@ -63,7 +63,7 @@
     },
     {
       "id": 7,
-      "categories": "clothing women",
+      "categories": "clothes women",
       "name": "OVERSIZED LINEN BLEND SHORT-SLEEVE SHIRT",
       "image": "https://img.hollisterco.com/is/image/anf/KIC_340-2137-0653-700_prod1?policy=product-large",
       "price": 30,
@@ -72,5 +72,15 @@
       "sold": 2
     }
   ],
-  "categories": {}
+  "categories": [
+    ["Men", "Women", "Jeans", "T-shirts", "Clothes"],
+    ["Nike", "Adidas", "Jordan", "Clarks", "Shoes"],
+    ["Apple", "Xiaomi", "Samsung", "Smartphones"],
+    ["Gamingconsoles", "Monitors", "GPUs", "Keyboards", "Mouses", "Gaming"],
+    ["CPU", "Motherboard", "ssd", "hdd", "PC hardware"],
+    ["Cameras"],
+    ["Cosmetics"],
+    ["Macbook", "HP", "Laptops"],
+    ["Nike", "Amazon", "Steam", "Giftcards"]
+  ]
 }
