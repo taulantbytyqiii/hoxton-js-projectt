@@ -112,21 +112,9 @@ function createRightHeaderSide() {
 //The function to create the footer
 
 function createFooter() {
-  //
-  //   <div class="back_to_top">
-  //     <button class="to_top_button">
-  //     <span class="material-symbols-outlined"> expand_less </span>
-  //     <p>Back to top</p>
-  //   </button>
-  //   </div>
-  //   <div class="footer_a">
-  //     <a href="about_footer_a">About us</a>
-  //     <a href="partners_footer_a">Partners</a>
-  //     <a href="faq_footer_a">FAQ</a>
-  //     <a href="mm_footer_a">Make money with us</a>
-  //     <a href="policies_footer_a">Policies</a>
-  //   </div>
-  //
+
+  if (footer === null) return;
+  
   let divEl = document.createElement("div");
   divEl.className = "back_to_top";
   let buttonEl = document.createElement("button");
@@ -162,6 +150,8 @@ function createFooter() {
   footerA.append(footerA1, footerA2, footerA3, footerA4, footerA5);
   footer.append(divEl, footerA);
 }
+
+createFooter();
 
 //Function to get the products from DB
 
