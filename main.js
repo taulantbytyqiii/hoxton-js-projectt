@@ -43,6 +43,8 @@ getProducts();
 
 function createHeader() {
   //Logo
+  if (header === null) return;
+
   let logoLink = document.createElement("a");
   logoLink.href = "./index.html";
   logoLink.className = "header__logo";
@@ -140,7 +142,6 @@ function createFooter() {
   pEl.textContent = "Back to top";
   buttonEl.append(spanEl, pEl);
   divEl.append(buttonEl);
-
   let footerA = document.createElement("div");
   footerA.className = "footer_a";
   let footerA1 = document.createElement("a");
