@@ -11,6 +11,7 @@ let state = {
   searchInput: "",
   sortByPrice: [],
   sortBySeller: "",
+  modal: "",
 };
 
 //Variables for the different parts of the page
@@ -19,7 +20,7 @@ let header = document.querySelector(".header");
 let filterAside = document.querySelector(".filters-section");
 let prodSec = document.querySelector(".products-section");
 let footer = document.querySelector("footer");
-let modal = document.querySelector(".modal");
+let modal = document.querySelector("#modal");
 
 //Main render function
 getCategories();
@@ -70,9 +71,6 @@ function createHeader() {
   header.append(logoLink, headerSearchDiv, createRightHeaderSide());
 }
 
-
-
-
 //Function that render things on the right side of
 // header depending if there is a user logged in
 
@@ -83,6 +81,10 @@ function createRightHeaderSide() {
   if (!state.userLoged) {
     let headerRightSide = document.createElement("div");
     headerRightSide.className = "header__right-side-no-user";
+    headerRightSide.addEventListener("click", () => {
+      state.modal = "login-or-signup";
+      renderModal();
+    });
     let pEl1 = document.createElement("p");
     pEl1.className = "dif";
     pEl1.textContent = "Sign in";
@@ -108,7 +110,7 @@ function createRightHeaderSide() {
 //The function to create the footer
 
 function createFooter() {
-  //   
+  //
   //   <div class="back_to_top">
   //     <button class="to_top_button">
   //     <span class="material-symbols-outlined"> expand_less </span>
@@ -128,10 +130,9 @@ function createFooter() {
   let buttonEl = document.createElement("button");
   buttonEl.className = "to_top_button";
   footer.append();
-  buttonEl.addEventListener("click", ()  => {
+  buttonEl.addEventListener("click", () => {
     window.scrollTo(0, 0); // scroll to top of page
-  } 
-  );
+  });
   let spanEl = document.createElement("span");
   spanEl.className = "material-symbols-outlined";
   spanEl.textContent = "expand_less";
@@ -139,7 +140,6 @@ function createFooter() {
   pEl.textContent = "Back to top";
   buttonEl.append(spanEl, pEl);
   divEl.append(buttonEl);
-  
 
   let footerA = document.createElement("div");
   footerA.className = "footer_a";
@@ -160,12 +160,7 @@ function createFooter() {
   footerA5.textContent = "Policies";
   footerA.append(footerA1, footerA2, footerA3, footerA4, footerA5);
   footer.append(divEl, footerA);
-
 }
-
-
-
-
 
 //Function to get the products from DB
 
@@ -230,16 +225,7 @@ function getSubCategories(index, ulEl, divEl) {
   let goBack = document.createElement("h4");
   goBack.textContent = "Remove filters";
   goBack.addEventListener("click", function () {
-    document.querySelector(".from").value = "";
-    document.querySelector(".to").value = "";
-    document.querySelector(".sort-by-seller-input").value = "";
-    state.selectedCategory = "";
-    state.selectedCategories = [];
-    divEl.textContent = "";
-    state.searchInput = "";
-    state.sortByPrice = [];
-    state.sortBySeller = "";
-    document.querySelector(".search-form").reset();
+    refreshFilter(divEl);
     goBack.remove();
     renderCategories();
     render();
@@ -339,11 +325,6 @@ function filterProducts(product) {
   return null;
 }
 function filter(product) {
-  // console.log(state.searchInput);
-  // console.log(state.selectedCategory);
-  // console.log(state.selectedCategories);
-  // console.log(state.sortByPrice);
-  // console.log(state.sortBySeller);
   if (state.searchInput) {
     if (!product.name.toLocaleLowerCase().includes(state.searchInput))
       return false;
@@ -385,7 +366,83 @@ function getSearchInput(inputValue) {
   state.searchInput = inputValue;
   render();
 }
-
+//Function to refresh all the filters
+function refreshFilter(divEl) {
+  document.querySelector(".from").value = "";
+  document.querySelector(".to").value = "";
+  document.querySelector(".sort-by-seller-input").value = "";
+  state.selectedCategory = "";
+  state.selectedCategories = [];
+  divEl.textContent = "";
+  state.searchInput = "";
+  state.sortByPrice = [];
+  state.sortBySeller = "";
+  document.querySelector(".search-form").reset();
+}
+//Function to render modals
+function renderModal() {
+  modal.innerHTML = "";
+  modal.className = "modal";
+  let modalContent = document.createElement("div");
+  modalContent.className = "modal-content";
+  let brandTitle = document.createElement("h1");
+  brandTitle.textContent = "Hoxstore";
+  let closeBtn = document.createElement("span");
+  closeBtn.className = "material-symbols-outlined close";
+  closeBtn.textContent = "close";
+  closeBtn.addEventListener("click", function () {
+    modal.className = "";
+    modal.innerHTML = "";
+    modalContent.remove();
+    state.modal = "";
+  });
+  if ((state.modal = "login-or-signup")) {
+    let h3El = document.createElement("h3");
+    h3El.textContent = "Log in";
+    let loginForm = document.createElement("form");
+    loginForm.className = "log-in-form";
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!checkValidity(emailInput.value, passwordInput.value)) {
+        emailInput.value = "";
+        passwordInput.value = "";
+        p3.textContent = "Incorrect account details";
+      }
+    });
+    let h4El = document.createElement("h4");
+    h4El.textContent = "Email";
+    let emailInput = document.createElement("input");
+    emailInput.type = "email";
+    emailInput.required = true;
+    emailInput.placeholder = "Type your email";
+    let h4El2 = document.createElement("h4");
+    h4El2.textContent = "Password";
+    let passwordInput = document.createElement("input");
+    passwordInput.type = "password";
+    passwordInput.required = true;
+    passwordInput.placeholder = "Type your password";
+    let loginBtn = document.createElement("input");
+    loginBtn.type = "submit";
+    loginBtn.value = "Log in";
+    loginBtn.id = "log-in-btn";
+    loginForm.append(h4El, emailInput, h4El2, passwordInput, loginBtn);
+    let p1 = document.createElement("p");
+    p1.textContent = "Or";
+    let p2 = document.createElement("p");
+    p2.id = "create-acc-link";
+    p2.textContent = "Create an account if you don't have one";
+    let p3 = document.createElement("p");
+    p3.id = "log-in-error-message";
+    modalContent.append(closeBtn, brandTitle, h3El, loginForm, p1, p2, p3);
+    modal.appendChild(modalContent);
+  }
+}
+//Function to check for validity
+function checkValidity(email, password, username) {
+  return false;
+  if ((state.modal = "login-or-signup")) {
+  }
+}
 //Adding eventlisteners to sort by price and by seller forms
 document.querySelector(".sort-price").addEventListener("submit", (e) => {
   e.preventDefault();

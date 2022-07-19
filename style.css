@@ -5,6 +5,7 @@
 }
 body {
   background-color: #f2f5f5;
+  overflow: hidden;
 }
 /*  Header Styling  */
 header {
@@ -82,6 +83,10 @@ header {
 }
 
 /*  Main  */
+.main-section {
+  z-index: 1000;
+  overflow-y: scroll;
+}
 .main-container {
   position: absolute;
   height: calc(100% - 80px);
@@ -269,39 +274,123 @@ main {
   color: red;
 }
 
-footer{
+footer {
   background-color: gray;
   display: grid;
   grid-auto-flow: row;
   place-content: center;
   justify-content: center;
-position: relative;
+  position: relative;
 }
 
-.back_to_top{
+.back_to_top {
   display: grid;
   grid-auto-flow: row;
 }
 
-.to_top_button{
-background-color: gray;
-border: none;
-color: white;
-padding: 15px 32px;
-font-size: 1rem;
+.to_top_button {
+  background-color: gray;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  font-size: 1rem;
 }
 
-.footer_a{
+.footer_a {
   display: grid;
   grid-auto-flow: column;
   place-content: center;
   gap: 40px;
 }
 
-.footer_a a{
+.footer_a a {
   font-family: roboto;
   font-size: 1rem;
   color: rgb(0, 0, 0);
   text-decoration: none;
-  padding: 15px; 
+  padding: 15px;
+}
+.modal {
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(65, 65, 65, 0.671);
+  z-index: 2000;
+}
+.modal-content {
+  position: relative;
+  min-width: 400px;
+  padding: 75px;
+  border-radius: 8px;
+  background-color: white;
+}
+.modal-content h1 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: #2860f2;
+  font-size: 24px;
+  font-weight: lighter;
+  text-decoration: underline;
+  text-align: center;
+}
+.close {
+  position: absolute;
+  margin-top: -60px;
+  margin-left: 340px;
+}
+.modal-content h3 {
+  font-family: Helvetica, sans-serif;
+  font-weight: lighter;
+  font-size: 24px;
+  margin-top: 30px;
+  color: rgb(79, 79, 79);
+}
+.modal-content h4 {
+  margin-top: 35px;
+  font-family: Helvetica, sans-serif;
+  font-weight: lighter;
+  font-size: 18px;
+  color: rgb(79, 79, 79);
+}
+.log-in-form {
+  display: grid;
+}
+.log-in-form input {
+  margin-top: 4px;
+  padding: 4px;
+  height: 35px;
+  border-radius: 4px;
+  border: 1.5px solid rgb(170, 170, 170);
+}
+#log-in-btn {
+  text-align: center;
+  cursor: pointer;
+  height: 48px;
+  margin-top: 40px;
+  border: none;
+  color: white;
+  background-color: #2860f2;
+  outline: none;
+  font-size: 18px;
+}
+.modal-content p {
+  text-align: center;
+  font-family: roboto;
+  font-weight: lighter;
+  margin-top: 25px;
+  color: rgb(170, 170, 170);
+}
+#create-acc-link {
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  color: rgb(123, 121, 121);
+  font-weight: bold;
+  text-decoration: underline;
+}
+#log-in-error-message {
+  color: rgb(247, 63, 63);
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: underline;
 }
