@@ -276,14 +276,14 @@ padding: 15px 32px;
 font-size: 1rem;
 }
 
-.about_us{
+.footer_a{
   display: grid;
   grid-auto-flow: column;
   place-content: center;
   gap: 40px;
 }
 
-.about_us a{
+.footer_a a{
   font-family: roboto;
   font-size: 1rem;
   color: rgb(0, 0, 0);

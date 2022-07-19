@@ -68,6 +68,9 @@ function createHeader() {
   header.append(logoLink, headerSearchDiv, createRightHeaderSide());
 }
 
+
+
+
 //Function that render things on the right side of
 // header depending if there is a user logged in
 
@@ -99,6 +102,68 @@ function createRightHeaderSide() {
   }
   return headerRightSideContainer;
 }
+
+//The function to create the footer
+
+function createFooter() {
+  //   
+  //   <div class="back_to_top">
+  //     <button class="to_top_button">
+  //     <span class="material-symbols-outlined"> expand_less </span>
+  //     <p>Back to top</p>
+  //   </button>
+  //   </div>
+  //   <div class="footer_a">
+  //     <a href="about_footer_a">About us</a>
+  //     <a href="partners_footer_a">Partners</a>
+  //     <a href="faq_footer_a">FAQ</a>
+  //     <a href="mm_footer_a">Make money with us</a>
+  //     <a href="policies_footer_a">Policies</a>
+  //   </div>
+  //
+  let divEl = document.createElement("div");
+  divEl.className = "back_to_top";
+  let buttonEl = document.createElement("button");
+  buttonEl.className = "to_top_button";
+  footer.append();
+  buttonEl.addEventListener("click", ()  => {
+    window.scrollTo(0, 0); // scroll to top of page
+  } 
+  );
+  let spanEl = document.createElement("span");
+  spanEl.className = "material-symbols-outlined";
+  spanEl.textContent = "expand_less";
+  let pEl = document.createElement("p");
+  pEl.textContent = "Back to top";
+  buttonEl.append(spanEl, pEl);
+  divEl.append(buttonEl);
+  
+
+  let footerA = document.createElement("div");
+  footerA.className = "footer_a";
+  let footerA1 = document.createElement("a");
+  footerA1.href = "about_footer_a";
+  footerA1.textContent = "About us";
+  let footerA2 = document.createElement("a");
+  footerA2.href = "partners_footer_a";
+  footerA2.textContent = "Partners";
+  let footerA3 = document.createElement("a");
+  footerA3.href = "faq_footer_a";
+  footerA3.textContent = "FAQ";
+  let footerA4 = document.createElement("a");
+  footerA4.href = "mm_footer_a";
+  footerA4.textContent = "Make money with us";
+  let footerA5 = document.createElement("a");
+  footerA5.href = "policies_footer_a";
+  footerA5.textContent = "Policies";
+  footerA.append(footerA1, footerA2, footerA3, footerA4, footerA5);
+  footer.append(divEl, footerA);
+
+}
+
+
+
+
 
 //Function to get the products from DB
 
