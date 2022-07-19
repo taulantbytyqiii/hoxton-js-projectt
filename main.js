@@ -431,10 +431,16 @@ function renderModal() {
     let p2 = document.createElement("p");
     p2.id = "create-acc-link";
     p2.textContent = "Create an account if you don't have one";
+    p2.addEventListener("click", function () {
+      state.modal = "create-account";
+      renderModal();
+    });
     let p3 = document.createElement("p");
     p3.id = "log-in-error-message";
     modalContent.append(closeBtn, brandTitle, h3El, loginForm, p1, p2, p3);
     modal.appendChild(modalContent);
+  } else if (state.modal === "create-account") {
+    //qitu ki me punu redi
   }
 }
 //Function to check for validity
