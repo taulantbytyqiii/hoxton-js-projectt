@@ -448,7 +448,7 @@ function renderModal() {
       }
     }
     );
-    let h4El = document.createElement("h4");
+     let h4El = document.createElement("h4");
     h4El.textContent = "What's your name?";
     let nameInput = document.createElement("input");
     nameInput.type = "text";
