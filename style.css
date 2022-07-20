@@ -280,7 +280,6 @@ footer {
   grid-auto-flow: row;
   place-content: center;
   justify-content: center;
-  position: relative;
 }
 
 .back_to_top {
@@ -404,6 +403,7 @@ footer {
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: underline;
 }
+<<<<<<< HEAD
 .cart {
   position: relative;
 }
@@ -606,3 +606,28 @@ footer {
   color: rgb(77, 77, 77);
   text-align: start;
 } */
+=======
+
+.create-acc-form{
+  display: grid;
+}
+
+.create-acc-form input {
+  margin-top: 4px;
+  padding: 4px;
+  height: 35px;
+  border-radius: 4px;
+  border: 1.5px solid rgb(170, 170, 170);
+}
+#create-acc-btn {
+  text-align: center;
+  cursor: pointer;
+  height: 48px;
+  margin-top: 40px;
+  border: none;
+  color: white;
+  background-color: #2860f2;
+  outline: none;
+  font-size: 18px;
+}
+>>>>>>> 300da9ee80853c1504ec5d31b6118855c7c4e60f
