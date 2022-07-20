@@ -411,11 +411,7 @@ function renderModal() {
     modalContent.remove();
     state.modal = "";
   });
-<<<<<<< HEAD
   if ((state.modal === "login-or-signup")) {
-=======
-  if (state.modal === "login-or-signup") {
->>>>>>> 27f82b87ec9d5120aa56663e301d05ab9348987e
     let h3El = document.createElement("h3");
     h3El.textContent = "Log in";
     let loginForm = document.createElement("form");
@@ -480,7 +476,7 @@ function renderModal() {
         emailInput.value = "";
         passwordInput.value = "";
       }
-    }
+    })
     modal.innerHTML = "";
     modalContent.innerHTML = "";
     modalContent.className = " modal-content cart-modal";
