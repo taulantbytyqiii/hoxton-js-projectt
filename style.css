@@ -403,7 +403,6 @@ footer {
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: underline;
 }
-<<<<<<< HEAD
 .cart {
   position: relative;
 }
@@ -606,7 +605,6 @@ footer {
   color: rgb(77, 77, 77);
   text-align: start;
 } */
-=======
 
 .create-acc-form{
   display: grid;
@@ -630,4 +628,3 @@ footer {
   outline: none;
   font-size: 18px;
 }
->>>>>>> 300da9ee80853c1504ec5d31b6118855c7c4e60f
