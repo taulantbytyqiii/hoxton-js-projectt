@@ -601,6 +601,9 @@ function renderModal() {
     modal.appendChild(modalContent);
   }
 }
+
+
+
 //Function to check for validity
 function checkValidity(emailt, passwordt) {
   for (let user of state.users) {
