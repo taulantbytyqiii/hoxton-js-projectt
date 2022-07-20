@@ -3,8 +3,22 @@
     {
       "id": 1,
       "username": "dalldyshja",
-      "user-email": "dalldyshjaa@gmail.com",
-      "user-password": "dalldyshjaa"
+      "email": "dalldyshjaa@gmail.com",
+      "password": "dalldyshjaa",
+      "userimage": "./profile.png",
+      "balance": 230,
+      "onCart": [],
+      "bought": []
+    },
+    {
+      "id": 2,
+      "username": "dalldyshjaaa",
+      "email": "dalldyshjaasaf@gmail.com",
+      "password": "dalldyshjaaasf",
+      "userimage": "./profile.png",
+      "balance": 1000000,
+      "onCart": [],
+      "bought": []
     }
   ]
 }

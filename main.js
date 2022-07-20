@@ -4,7 +4,7 @@
 
 let state = {
   products: [],
-  userLoged: false,
+  user: false,
   selectedCategory: "",
   mainCategories: [],
   selectedCategories: [],
@@ -12,6 +12,7 @@ let state = {
   sortByPrice: [],
   sortBySeller: "",
   modal: "",
+  users: [],
 };
 
 //Variables for the different parts of the page
@@ -26,9 +27,10 @@ let modal = document.querySelector("#modal");
 getCategories();
 function render() {
   prodSec.innerHTML = "";
-  if (!header.childNodes.length) createHeader();
+  header.innerHTML = "";
+  createHeader();
   for (let product of state.products) {
-    if (filter(product)) {
+    if (filterProducts(product)) {
       prodSec.appendChild(createProduct(product));
     }
   }
@@ -38,7 +40,7 @@ function render() {
 // Get the products from database and call render();
 
 getProducts();
-
+getTheUsers();
 //The function to create the header
 
 function createHeader() {
@@ -79,8 +81,8 @@ function createHeader() {
 function createRightHeaderSide() {
   let headerRightSideContainer = document.createElement("div");
   headerRightSideContainer.className = "header__right-side-items";
-
-  if (!state.userLoged) {
+  //
+  if (!state.user) {
     let headerRightSide = document.createElement("div");
     headerRightSide.className = "header__right-side-no-user";
     headerRightSide.addEventListener("click", () => {
@@ -98,12 +100,22 @@ function createRightHeaderSide() {
     headerRightSideContainer.appendChild(headerRightSide);
   } else {
     let shoppingCart = document.createElement("span");
-    shoppingCart.className = "material-symbols-outlined";
+    shoppingCart.className = "material-symbols-outlined cart";
     shoppingCart.textContent = "shopping_cart";
+    shoppingCart.addEventListener("click", function () {
+      state.modal = "cart";
+      renderModal();
+    });
     let profileAvatar = document.createElement("img");
-    profileAvatar.src =
-      "https://m.media-amazon.com/images/I/71PGvPXpk5L._SL1500_.jpg";
+    profileAvatar.src = state.user.userimage;
     profileAvatar.className = "profile-avatar";
+    if (state.user.onCart.length) {
+      let onCartNumber = document.createElement("div");
+      onCartNumber.textContent = state.user.onCart.length;
+      onCartNumber.className = "on-cart-number";
+      shoppingCart.appendChild(onCartNumber);
+    }
+
     headerRightSideContainer.append(shoppingCart, profileAvatar);
   }
   return headerRightSideContainer;
@@ -112,9 +124,8 @@ function createRightHeaderSide() {
 //The function to create the footer
 
 function createFooter() {
-
   if (footer === null) return;
-  
+
   let divEl = document.createElement("div");
   divEl.className = "back_to_top";
   let buttonEl = document.createElement("button");
@@ -289,7 +300,7 @@ function createProduct(product) {
 
 //Filter function that determines whether a product should be displayed
 
-function filterProducts(product) {
+function filterProductss(product) {
   if (state.selectedCategory !== "" && state.selectedCategories.length === 0) {
   }
   if (state.searchInput === "" && state.selectedCategories.length === 0)
@@ -315,7 +326,7 @@ function filterProducts(product) {
   }
   return null;
 }
-function filter(product) {
+function filterProducts(product) {
   if (state.searchInput) {
     if (!product.name.toLocaleLowerCase().includes(state.searchInput))
       return false;
@@ -371,8 +382,20 @@ function refreshFilter(divEl) {
   document.querySelector(".search-form").reset();
 }
 //Function to render modals
+// {
+//           "id": 3,
+//           "categories": ["clothes", "men", "jeans"],
+//           "name": "DARK WASH BOOT JEANS",
+//           "image": "https://img.hollisterco.com/is/image/anf/KIC_331-7300-1302-276_prod1?policy=product-large",
+//           "price": 49.99,
+//           "shipping": 4,
+//           "dateEntered": "2021/08/10",
+//           "stock": 10,
+//           "sold": 4,
+//           "seller": "aladin",
+//           "desc": "lorem lorem lorem lorem lorem lorem lorem"
+//         }
 function renderModal() {
- 
   modal.innerHTML = "";
   modal.className = "modal";
   let modalContent = document.createElement("div");
@@ -388,19 +411,16 @@ function renderModal() {
     modalContent.remove();
     state.modal = "";
   });
+<<<<<<< HEAD
   if ((state.modal === "login-or-signup")) {
+=======
+  if (state.modal === "login-or-signup") {
+>>>>>>> 27f82b87ec9d5120aa56663e301d05ab9348987e
     let h3El = document.createElement("h3");
     h3El.textContent = "Log in";
     let loginForm = document.createElement("form");
     loginForm.className = "log-in-form";
-    loginForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (!checkValidity(emailInput.value, passwordInput.value)) {
-        emailInput.value = "";
-        passwordInput.value = "";
-        p3.textContent = "Incorrect account details";
-      }
-    });
+
     let h4El = document.createElement("h4");
     h4El.textContent = "Email";
     let emailInput = document.createElement("input");
@@ -427,12 +447,26 @@ function renderModal() {
       state.modal = "create-account";
       renderModal();
     });
-   
+
     let p3 = document.createElement("p");
     p3.id = "log-in-error-message";
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!checkValidity(emailInput.value, passwordInput.value)) {
+        emailInput.value = "";
+        passwordInput.value = "";
+        p3.textContent = "Incorrect account details";
+      } else {
+        modal.className = "";
+        console.log(state.user.onCart);
+        modalContent.remove();
+        render();
+      }
+    });
     modalContent.append(closeBtn, brandTitle, h3El, loginForm, p1, p2, p3);
     modal.appendChild(modalContent);
   } else if (state.modal === "create-account") {
+<<<<<<< HEAD
     let h1El = document.createElement("h1");
     h1El.textContent = "Hoxstore";
     let h3El = document.createElement("h3");
@@ -447,53 +481,157 @@ function renderModal() {
         emailInput.value = "";
         passwordInput.value = "";
       }
+=======
+    //qitu ki me punu redi
+  } else if (state.modal === "cart") {
+    if (state.user.onCart.length === 0) {
+>>>>>>> 27f82b87ec9d5120aa56663e301d05ab9348987e
     }
-    );
-     let h4El = document.createElement("h4");
-    h4El.textContent = "What's your name?";
-    let nameInput = document.createElement("input");
-    nameInput.type = "text";
-    nameInput.required = true;
-    nameInput.placeholder = "Full Name";
-    let h4El2 = document.createElement("h4");
-    h4El2.textContent = "What's your email adress?";
-    let emailInput = document.createElement("input");
-    emailInput.type = "email";
-    emailInput.required = true;
-    emailInput.placeholder = "Email";
-    let h4El3 = document.createElement("h4");
-    h4El3.textContent = "What's your password?";
-    let passwordInput = document.createElement("input");
-    passwordInput.type = "password";
-    passwordInput.required = true;
-    passwordInput.placeholder = "Password";
-    let h4El4 = document.createElement("h4");
-    h4El4.textContent = "Confirm your password";
-    let passwordInput2 = document.createElement("input");
-    passwordInput2.type = "password";
-    passwordInput2.required = true;
-    passwordInput2.placeholder = "Confirm password";
-    let tcCheckbox = document.createElement("label");
-    tcCheckbox.id = "t&c_checkbox";
-    tcCheckbox.textContent = "I agree with the T&Cs.";
-    let tcCheckboxInput = document.createElement("input");
-    tcCheckboxInput.type = "checkbox";
-    tcCheckboxInput.required = true;
-    tcCheckbox.append(tcCheckboxInput);
-    let createAccBtn = document.createElement("input");
-    createAccBtn.type = "submit";
-    createAccBtn.value = "Create account";
-    createAccBtn.id = "create-acc-btn";
-    createAccForm.append(h4El, nameInput, h4El2, emailInput, h4El3, passwordInput, h4El4, passwordInput2, tcCheckbox, createAccBtn);
+    modal.innerHTML = "";
+    modalContent.innerHTML = "";
+    modalContent.className = " modal-content cart-modal";
+    let prodsSecDiv = document.createElement("div");
+    prodsSecDiv.className = "modal-cart-product-section";
+    let logoLink = document.createElement("a");
+    brandTitle.className = "cart-modal-title";
+    logoLink.appendChild(brandTitle);
+    closeBtn.className = "material-symbols-outlined close-cart-modal";
+    let bagCount = document.createElement("h4");
+    bagCount.textContent = `Bag (${state.user.onCart.length})`;
+    let prodSecDiv = document.createElement("div");
+    prodSecDiv.className = "cart-prod-section";
+    let total = 0;
+    let shippingTotalPrice = 0;
+    let index = 0;
+    for (let i = 0; i < state.user.onCart.length; i++) {
+      let product = state.user.onCart[i];
+      total += product.price;
+      shippingTotalPrice += product.shipping;
+      let prod = document.createElement("div");
+      prod.className = "cart-prod";
+      let prodImg = document.createElement("img");
+      prodImg.className = "cart-prod-image";
+      prodImg.src = product.image;
+      let cartProdInfos = document.createElement("div");
+      cartProdInfos.className = "cart-prod-infos";
+      let prodInfo = document.createElement("div");
+      prodInfo.className = "cart-prod-infos";
+      let namePrice = document.createElement("div");
+      namePrice.className = "name-price";
+      let prodNameUnit = document.createElement("span");
+      prodNameUnit.className = "name-price";
+      let prodName = document.createElement("strong");
+      prodName.textContent = product.name;
+      prodNameUnit.appendChild(prodName);
+      let prodPriceUnit = document.createElement("span");
+      prodPriceUnit.className = "name-price";
+      let prodPrice = document.createElement("span");
+      prodPrice.className = "cart-prod-price";
+      prodPrice.textContent = `$${product.price.toFixed(2)}`;
+      prodPriceUnit.appendChild(prodPrice);
+      namePrice.append(prodNameUnit, prodPriceUnit);
+      let poDiv = document.createElement("div");
+      poDiv.className = "po";
+      let prodDesc = document.createElement("span");
+      prodDesc.className = "cart-prod-info";
+      prodDesc.textContent = product.desc;
+      poDiv.appendChild(prodDesc);
+      let poDiv2 = document.createElement("div");
+      poDiv2.className = "po";
+      let prodShip = document.createElement("span");
+      prodShip.className = "cart-prod-info";
+      prodShip.textContent = `Shipping:  $${product.shipping.toFixed(2)}`;
+      poDiv2.appendChild(prodShip);
+      let poDiv3 = document.createElement("div");
+      poDiv3.className = "po";
+      let removeBtn = document.createElement("button");
+      removeBtn.className = "cart-prod-info cart-prod-remove-btn";
+      removeBtn.textContent = "Remove";
+      removeBtn.addEventListener("click", function () {
+        state.user.onCart[i] = "";
+        let a = state.user.onCart.filter((productt) => productt !== "");
+        state.user.onCart = a;
+        console.log(state.user.onCart);
+        prod.remove();
+        renderModal();
+        document.querySelector(".on-cart-number").textContent =
+          state.user.onCart.length;
+        fetch(`http://localhost:3007/users/${state.user.id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: `${JSON.stringify(state.user)}`,
+        });
+      });
+      poDiv3.appendChild(removeBtn);
+      let div = document.createElement("div");
+      prodInfo.append(namePrice, poDiv, poDiv2, poDiv3, div);
+      prod.append(prodImg, prodInfo);
+      prodSecDiv.appendChild(prod);
+      index++;
+    }
+    prodsSecDiv.append(logoLink, bagCount, prodSecDiv);
+    console.log(total);
+    console.log(shippingTotalPrice);
+    // info abt bag
+    let infoAbtBag = document.createElement("div");
+    infoAbtBag.className = "info-about-bag";
+    let summary = document.createElement("h3");
+    summary.className = "summary";
+    summary.textContent = "Summary";
+    let divEl1 = document.createElement("div");
+    divEl1.className = "h";
+    let divSub = document.createElement("div");
+    divSub.className = "cart-modal-summary-info sub";
+    let subtotal = document.createElement("p");
+    subtotal.textContent = "Subtotal";
+    let subtotalNumber = document.createElement("p");
+    subtotalNumber.textContent = `$${total.toFixed(2)}`;
+    divSub.append(subtotal, subtotalNumber);
+    let shippingUnit = document.createElement("div");
+    shippingUnit.className = "cart-modal-summary-info";
+    let shipping = document.createElement("p");
+    shipping.textContent = "Estimated shipping and handling";
+    let shippingPrice = document.createElement("p");
+    shippingPrice.textContent = `$${shippingTotalPrice.toFixed(2)}`;
+    shippingUnit.append(shipping, shippingPrice);
+    divEl1.append(divSub, shippingUnit);
+    let totalUnit = document.createElement("div");
+    totalUnit.className = "cart-modal-summary-info total";
+    let totalTitle = document.createElement("h4");
+    totalTitle.textContent = "Total";
+    let totalPriceUnit = document.createElement("p");
+    let totalPrice = document.createElement("strong");
+    totalPrice.textContent = `$${(total + shippingTotalPrice).toFixed(2)}`;
+    totalPriceUnit.appendChild(totalPrice);
+    totalUnit.append(totalTitle, totalPriceUnit);
+    let checkoutBtnUnit = document.createElement("div");
+    let checkoutBtn = document.createElement("button");
+    checkoutBtn.className = "checkout-btn";
+    checkoutBtn.textContent = "Checkout";
+    checkoutBtnUnit.appendChild(checkoutBtn);
+    infoAbtBag.append(summary, divEl1, totalUnit, checkoutBtnUnit);
+    if (state.user.onCart.length === 0) {
+      prodSecDiv.textContent = "No products on your bag";
+      prodSecDiv.className = "no-products-on-bag";
+      closeBtn.className = "material-symbols-outlined no-products";
+    }
+
+    modalContent.append(closeBtn, prodsSecDiv, infoAbtBag);
+    modal.appendChild(modalContent);
   }
 }
 
 
 
 //Function to check for validity
-function checkValidity(email, password, username) {
-  return false;
-  if ((state.modal = "login-or-signup")) {
+function checkValidity(emailt, passwordt) {
+  for (let user of state.users) {
+    if (user.email === emailt && user.password === passwordt) {
+      state.user = user;
+      return true;
+    }
   }
 }
 //Adding eventlisteners to sort by price and by seller forms
@@ -520,3 +658,11 @@ document.querySelector(".sort-seller").addEventListener("submit", (e) => {
   state.sortBySeller = seller;
   render();
 });
+
+function getTheUsers() {
+  fetch("http://localhost:3007/users")
+    .then((resp) => resp.json())
+    .then((users) => {
+      state.users = users;
+    });
+}
