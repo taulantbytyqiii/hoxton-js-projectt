@@ -372,6 +372,7 @@ function refreshFilter(divEl) {
 }
 //Function to render modals
 function renderModal() {
+ 
   modal.innerHTML = "";
   modal.className = "modal";
   let modalContent = document.createElement("div");
@@ -426,12 +427,63 @@ function renderModal() {
       state.modal = "create-account";
       renderModal();
     });
+   
     let p3 = document.createElement("p");
     p3.id = "log-in-error-message";
     modalContent.append(closeBtn, brandTitle, h3El, loginForm, p1, p2, p3);
     modal.appendChild(modalContent);
   } else if (state.modal === "create-account") {
-    //qitu ki me punu redi
+    let h1El = document.createElement("h1");
+    h1El.textContent = "Hoxstore";
+    let h3El = document.createElement("h3");
+    h3El.textContent = "Create account";
+    let createAccForm = document.createElement("form");
+    createAccForm.className = "create-acc-form";
+    createAccForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!checkValidity(nameInput.value, emailInput.value, passwordInput.value)) {
+        nameInput.value = "";
+        emailInput.value = "";
+        passwordInput.value = "";
+      }
+    }
+    );
+    let h4El = document.createElement("h4");
+    h4El.textContent = "What's your name?";
+    let nameInput = document.createElement("input");
+    nameInput.type = "text";
+    nameInput.required = true;
+    nameInput.placeholder = "Full Name";
+    let h4El2 = document.createElement("h4");
+    h4El2.textContent = "What's your email adress?";
+    let emailInput = document.createElement("input");
+    emailInput.type = "email";
+    emailInput.required = true;
+    emailInput.placeholder = "Email";
+    let h4El3 = document.createElement("h4");
+    h4El3.textContent = "What's your password?";
+    let passwordInput = document.createElement("input");
+    passwordInput.type = "password";
+    passwordInput.required = true;
+    passwordInput.placeholder = "Password";
+    let h4El4 = document.createElement("h4");
+    h4El4.textContent = "Confirm your password";
+    let passwordInput2 = document.createElement("input");
+    passwordInput2.type = "password";
+    passwordInput2.required = true;
+    passwordInput2.placeholder = "Confirm password";
+    let tcCheckbox = document.createElement("label");
+    tcCheckbox.id = "t&c_checkbox";
+    tcCheckbox.textContent = "I agree with the T&Cs.";
+    let tcCheckboxInput = document.createElement("input");
+    tcCheckboxInput.type = "checkbox";
+    tcCheckboxInput.required = true;
+    tcCheckbox.append(tcCheckboxInput);
+    let createAccBtn = document.createElement("input");
+    createAccBtn.type = "submit";
+    createAccBtn.value = "Create account";
+    createAccBtn.id = "create-acc-btn";
+    createAccForm.append(h4El, nameInput, h4El2, emailInput, h4El3, passwordInput, h4El4, passwordInput2, tcCheckbox, createAccBtn);
   }
 }
 //Function to check for validity
