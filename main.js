@@ -466,7 +466,6 @@ function renderModal() {
     modalContent.append(closeBtn, brandTitle, h3El, loginForm, p1, p2, p3);
     modal.appendChild(modalContent);
   } else if (state.modal === "create-account") {
-<<<<<<< HEAD
     let h1El = document.createElement("h1");
     h1El.textContent = "Hoxstore";
     let h3El = document.createElement("h3");
@@ -481,11 +480,6 @@ function renderModal() {
         emailInput.value = "";
         passwordInput.value = "";
       }
-=======
-    //qitu ki me punu redi
-  } else if (state.modal === "cart") {
-    if (state.user.onCart.length === 0) {
->>>>>>> 27f82b87ec9d5120aa56663e301d05ab9348987e
     }
     modal.innerHTML = "";
     modalContent.innerHTML = "";
