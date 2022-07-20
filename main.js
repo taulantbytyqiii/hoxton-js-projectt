@@ -486,6 +486,9 @@ function renderModal() {
     createAccForm.append(h4El, nameInput, h4El2, emailInput, h4El3, passwordInput, h4El4, passwordInput2, tcCheckbox, createAccBtn);
   }
 }
+
+
+
 //Function to check for validity
 function checkValidity(email, password, username) {
   return false;
