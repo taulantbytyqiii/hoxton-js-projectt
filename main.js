@@ -586,7 +586,9 @@ function renderModal() {
 
 
 
-//Function to check for validity
+
+
+
 function checkValidity(email, password, username) {
   return false;
   if ((state.modal = "login-or-signup")) {
