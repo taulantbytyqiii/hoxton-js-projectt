@@ -4,7 +4,7 @@
 
 let state = {
   products: [],
-  user: false,
+  userLoged: false,
   selectedCategory: "",
   mainCategories: [],
   selectedCategories: [],
@@ -12,7 +12,6 @@ let state = {
   sortByPrice: [],
   sortBySeller: "",
   modal: "",
-  users: [],
 };
 
 //Variables for the different parts of the page
@@ -27,10 +26,9 @@ let modal = document.querySelector("#modal");
 getCategories();
 function render() {
   prodSec.innerHTML = "";
-  header.innerHTML = "";
-  createHeader();
+  if (!header.childNodes.length) createHeader();
   for (let product of state.products) {
-    if (filterProducts(product)) {
+    if (filter(product)) {
       prodSec.appendChild(createProduct(product));
     }
   }
@@ -40,7 +38,7 @@ function render() {
 // Get the products from database and call render();
 
 getProducts();
-getTheUsers();
+
 //The function to create the header
 
 function createHeader() {
@@ -81,8 +79,8 @@ function createHeader() {
 function createRightHeaderSide() {
   let headerRightSideContainer = document.createElement("div");
   headerRightSideContainer.className = "header__right-side-items";
-  //
-  if (!state.user) {
+
+  if (!state.userLoged) {
     let headerRightSide = document.createElement("div");
     headerRightSide.className = "header__right-side-no-user";
     headerRightSide.addEventListener("click", () => {
@@ -100,22 +98,12 @@ function createRightHeaderSide() {
     headerRightSideContainer.appendChild(headerRightSide);
   } else {
     let shoppingCart = document.createElement("span");
-    shoppingCart.className = "material-symbols-outlined cart";
+    shoppingCart.className = "material-symbols-outlined";
     shoppingCart.textContent = "shopping_cart";
-    shoppingCart.addEventListener("click", function () {
-      state.modal = "cart";
-      renderModal();
-    });
     let profileAvatar = document.createElement("img");
-    profileAvatar.src = state.user.userimage;
+    profileAvatar.src =
+      "https://m.media-amazon.com/images/I/71PGvPXpk5L._SL1500_.jpg";
     profileAvatar.className = "profile-avatar";
-    if (state.user.onCart.length) {
-      let onCartNumber = document.createElement("div");
-      onCartNumber.textContent = state.user.onCart.length;
-      onCartNumber.className = "on-cart-number";
-      shoppingCart.appendChild(onCartNumber);
-    }
-
     headerRightSideContainer.append(shoppingCart, profileAvatar);
   }
   return headerRightSideContainer;
@@ -124,8 +112,9 @@ function createRightHeaderSide() {
 //The function to create the footer
 
 function createFooter() {
-  if (footer === null) return;
 
+  if (footer === null) return;
+  
   let divEl = document.createElement("div");
   divEl.className = "back_to_top";
   let buttonEl = document.createElement("button");
@@ -300,7 +289,7 @@ function createProduct(product) {
 
 //Filter function that determines whether a product should be displayed
 
-function filterProductss(product) {
+function filterProducts(product) {
   if (state.selectedCategory !== "" && state.selectedCategories.length === 0) {
   }
   if (state.searchInput === "" && state.selectedCategories.length === 0)
@@ -326,7 +315,7 @@ function filterProductss(product) {
   }
   return null;
 }
-function filterProducts(product) {
+function filter(product) {
   if (state.searchInput) {
     if (!product.name.toLocaleLowerCase().includes(state.searchInput))
       return false;
@@ -382,20 +371,8 @@ function refreshFilter(divEl) {
   document.querySelector(".search-form").reset();
 }
 //Function to render modals
-// {
-//           "id": 3,
-//           "categories": ["clothes", "men", "jeans"],
-//           "name": "DARK WASH BOOT JEANS",
-//           "image": "https://img.hollisterco.com/is/image/anf/KIC_331-7300-1302-276_prod1?policy=product-large",
-//           "price": 49.99,
-//           "shipping": 4,
-//           "dateEntered": "2021/08/10",
-//           "stock": 10,
-//           "sold": 4,
-//           "seller": "aladin",
-//           "desc": "lorem lorem lorem lorem lorem lorem lorem"
-//         }
 function renderModal() {
+ 
   modal.innerHTML = "";
   modal.className = "modal";
   let modalContent = document.createElement("div");
@@ -416,7 +393,14 @@ function renderModal() {
     h3El.textContent = "Log in";
     let loginForm = document.createElement("form");
     loginForm.className = "log-in-form";
-
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!checkValidity(emailInput.value, passwordInput.value)) {
+        emailInput.value = "";
+        passwordInput.value = "";
+        p3.textContent = "Incorrect account details";
+      }
+    });
     let h4El = document.createElement("h4");
     h4El.textContent = "Email";
     let emailInput = document.createElement("input");
@@ -443,22 +427,9 @@ function renderModal() {
       state.modal = "create-account";
       renderModal();
     });
-
+   
     let p3 = document.createElement("p");
     p3.id = "log-in-error-message";
-    loginForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (!checkValidity(emailInput.value, passwordInput.value)) {
-        emailInput.value = "";
-        passwordInput.value = "";
-        p3.textContent = "Incorrect account details";
-      } else {
-        modal.className = "";
-        console.log(state.user.onCart);
-        modalContent.remove();
-        render();
-      }
-    });
     modalContent.append(closeBtn, brandTitle, h3El, loginForm, p1, p2, p3);
     modal.appendChild(modalContent);
   } else if (state.modal === "create-account") {
@@ -616,12 +587,9 @@ function renderModal() {
 
 
 //Function to check for validity
-function checkValidity(emailt, passwordt) {
-  for (let user of state.users) {
-    if (user.email === emailt && user.password === passwordt) {
-      state.user = user;
-      return true;
-    }
+function checkValidity(email, password, username) {
+  return false;
+  if ((state.modal = "login-or-signup")) {
   }
 }
 //Adding eventlisteners to sort by price and by seller forms
@@ -648,11 +616,3 @@ document.querySelector(".sort-seller").addEventListener("submit", (e) => {
   state.sortBySeller = seller;
   render();
 });
-
-function getTheUsers() {
-  fetch("http://localhost:3007/users")
-    .then((resp) => resp.json())
-    .then((users) => {
-      state.users = users;
-    });
-}
