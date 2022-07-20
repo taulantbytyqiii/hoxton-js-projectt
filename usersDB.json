@@ -3,8 +3,63 @@
     {
       "id": 1,
       "username": "dalldyshja",
-      "user-email": "dalldyshjaa@gmail.com",
-      "user-password": "dalldyshjaa"
+      "email": "dalldyshjaa@gmail.com",
+      "password": "dalldyshjaa",
+      "userimage": "./profile.png",
+      "balance": 230,
+      "onCart": [
+        {
+          "seller": "asd",
+          "id": 1,
+          "categories": ["technology", "smartphones"],
+          "name": "Apple iPhone 11",
+          "image": "https://i.ebayimg.com/images/g/BWcAAOSwxdZiMK81/s-l640.jpg",
+          "price": 230,
+          "shipping": 24,
+          "dateEntered": "2021/08/10",
+          "stock": 10,
+          "sold": 27,
+          "seller": "aladin",
+          "desc": "lorem lorem lorem lorem lorem lorem lorem"
+        },
+        {
+          "id": 2,
+          "categories": ["technology", "gaming", "gamingconsoles"],
+          "name": "Sony Playstation 4",
+          "image": "https://m.media-amazon.com/images/I/71PGvPXpk5L._SL1500_.jpg",
+          "price": 120,
+          "shipping": 12,
+          "dateEntered": "2021/08/10",
+          "stock": 10,
+          "sold": 5,
+          "seller": "aladin",
+          "desc": "lorem lorem lorem lorem lorem lorem lorem"
+        },
+        {
+          "id": 5,
+          "categories": ["technology", "gaming", "monitors"],
+          "name": "Alienware 34 Curved QD-OLED Gaming Monitor - AW3423DW",
+          "image": "https://snpi.dell.com/snp/images/products/large/en-us~210-BCYE_V2/210-BCYE_V2.jpg",
+          "price": 1200,
+          "shipping": 12,
+          "dateEntered": "2021/08/10",
+          "stock": 6,
+          "sold": 12,
+          "seller": "aladin",
+          "desc": "lorem lorem lorem lorem lorem lorem lorem"
+        }
+      ],
+      "bought": []
+    },
+    {
+      "id": 2,
+      "username": "dalldyshjaaa",
+      "email": "dalldyshjaasaf@gmail.com",
+      "password": "dalldyshjaaasf",
+      "userimage": "./profile.png",
+      "balance": 1000000,
+      "onCart": [],
+      "bought": []
     }
   ]
 }
