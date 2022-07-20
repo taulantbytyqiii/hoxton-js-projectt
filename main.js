@@ -388,7 +388,7 @@ function renderModal() {
     modalContent.remove();
     state.modal = "";
   });
-  if ((state.modal = "login-or-signup")) {
+  if ((state.modal === "login-or-signup")) {
     let h3El = document.createElement("h3");
     h3El.textContent = "Log in";
     let loginForm = document.createElement("form");
@@ -439,6 +439,7 @@ function renderModal() {
     h3El.textContent = "Create account";
     let createAccForm = document.createElement("form");
     createAccForm.className = "create-acc-form";
+    modal.append(createAccForm)
     createAccForm.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!checkValidity(nameInput.value, emailInput.value, passwordInput.value)) {
