@@ -30,7 +30,7 @@ function render() {
   header.innerHTML = "";
   createHeader();
   for (let product of state.products) {
-    if (filter(product)) {
+    if (filterProducts(product)) {
       prodSec.appendChild(createProduct(product));
     }
   }
@@ -311,7 +311,7 @@ function createProduct(product) {
 
 //Filter function that determines whether a product should be displayed
 
-function filterProducts(product) {
+function filterProductss(product) {
   if (state.selectedCategory !== "" && state.selectedCategories.length === 0) {
   }
   if (state.searchInput === "" && state.selectedCategories.length === 0)
@@ -337,7 +337,7 @@ function filterProducts(product) {
   }
   return null;
 }
-function filter(product) {
+function filterProducts(product) {
   if (state.searchInput) {
     if (!product.name.toLocaleLowerCase().includes(state.searchInput))
       return false;
@@ -491,7 +491,9 @@ function renderModal() {
     prodSecDiv.className = "cart-prod-section";
     let total = 0;
     let shippingTotalPrice = 0;
-    for (let product of state.user.onCart) {
+    let index = 0;
+    for (let i = 0; i < state.user.onCart.length; i++) {
+      let product = state.user.onCart[i];
       total += product.price;
       shippingTotalPrice += product.shipping;
       let prod = document.createElement("div");
@@ -534,11 +536,29 @@ function renderModal() {
       let removeBtn = document.createElement("button");
       removeBtn.className = "cart-prod-info cart-prod-remove-btn";
       removeBtn.textContent = "Remove";
+      removeBtn.addEventListener("click", function () {
+        state.user.onCart[i] = "";
+        let a = state.user.onCart.filter((productt) => productt !== "");
+        state.user.onCart = a;
+        console.log(state.user.onCart);
+        prod.remove();
+        renderModal();
+        document.querySelector(".on-cart-number").textContent =
+          state.user.onCart.length;
+        fetch(`http://localhost:3007/users/${state.user.id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: `${JSON.stringify(state.user)}`,
+        });
+      });
       poDiv3.appendChild(removeBtn);
       let div = document.createElement("div");
       prodInfo.append(namePrice, poDiv, poDiv2, poDiv3, div);
       prod.append(prodImg, prodInfo);
       prodSecDiv.appendChild(prod);
+      index++;
     }
     prodsSecDiv.append(logoLink, bagCount, prodSecDiv);
     console.log(total);
