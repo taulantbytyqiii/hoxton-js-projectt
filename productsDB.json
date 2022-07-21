@@ -30,7 +30,7 @@
       "image": "https://img.hollisterco.com/is/image/anf/KIC_331-7300-1302-276_prod1?policy=product-large",
       "price": 49.99,
       "dateEntered": "2021/08/10",
-      "stock": 10,
+      "stock": 0,
       "sold": 4,
       "seller": "aladin"
     },
@@ -77,6 +77,258 @@
       "stock": 2,
       "sold": 2,
       "seller": "aladinn"
+    },
+    {
+      "id": 8,
+      "categories": ["cpu", "pc hardware"],
+      "name": "Procesor Intel Core i9-12900",
+      "image": "https://hhstsyoejx.gjirafa.net/gj50/img/189079/img/0.jpg",
+      "price": 654,
+      "dateEntered": "2021/08/10",
+      "stock": 8,
+      "sold": 2,
+      "seller": "aladinn",
+      "images": []
+    },
+    {
+      "id": 9,
+      "categories": ["cpu", "pc hardware"],
+      "name": "Procesor AMD Ryzen 5 4600G",
+      "image": "https://hhstsyoejx.gjirafa.net/gj50/img/188016/img/0.jpg",
+      "price": 930,
+      "dateEntered": "2021/08/10",
+      "stock": 8,
+      "sold": 2,
+      "seller": "aladinn",
+      "images": [
+        "https://hhstsyoejx.gjirafa.net/gj50/img/188016/img/1.jpg",
+        "https://hhstsyoejx.gjirafa.net/gj50/img/188016/img/2.jpg"
+      ]
+    },
+    {
+      "id": 10,
+      "categories": ["cpu", "pc hardware"],
+      "name": "Procesor Intel Core i5-12600",
+      "image": "https://hhstsyoejx.gjirafa.net/gj50/img/176649/img/0.jpg",
+      "price": 190,
+      "dateEntered": "2021/08/10",
+      "stock": 8,
+      "sold": 2,
+      "seller": "aladinn",
+      "images": [
+        "https://hhstsyoejx.gjirafa.net/gj50/img/176649/img/1.jpg",
+        "https://hhstsyoejx.gjirafa.net/gj50/img/176649/img/2.jpg"
+      ]
+    },
+    {
+      "id": 11,
+      "categories": ["gpus", "pc hardware", "gaming"],
+      "name": "Kartë grafike ASUS Dual GeForce RTX 3050 OC Edition 8GB NVIDIA GDDR6",
+      "image": "https://hhstsyoejx.gjirafa.net/gj50/img/188974/img/0.jpg",
+      "price": 654,
+      "dateEntered": "2021/08/10",
+      "stock": 0,
+      "sold": 2,
+      "seller": "aladinn",
+      "images": [
+        "https://hhstsyoejx.gjirafa.net/gj50/img/188974/img/1.jpg",
+        "https://hhstsyoejx.gjirafa.net/gj50/img/188974/img/2.jpg"
+      ]
+    },
+    {
+      "id": 12,
+      "categories": ["gpus", "pc hardware", "gaming"],
+      "name": "Kartë grafike Zotac GeForce RTX 3090 Trinity",
+      "image": "https://hhstsyoejx.gjirafa.net/gj50/img/184577/img/0.jpg",
+      "price": 1799,
+      "dateEntered": "2021/08/10",
+      "stock": 8,
+      "sold": 2,
+      "seller": "aladinn",
+      "images": [
+        "https://hhstsyoejx.gjirafa.net/gj50/img/184577/img/1.jpg",
+        "https://hhstsyoejx.gjirafa.net/gj50/img/184577/img/2.jpg"
+      ]
+    },
+    {
+      "id": 13,
+      "categories": ["monitors", "pc hardware", "gaming"],
+      "name": "Monitor MSI Gaming Optix MAG281URF - LED 27.9, 4K UHD, i zi",
+      "image": "https://hhstsyoejx.gjirafa.net/gj50/img/178530/img/0.jpg",
+      "price": 817,
+      "dateEntered": "2021/08/10",
+      "stock": 20,
+      "sold": 30,
+      "seller": "aladinn",
+      "images": [
+        "https://hhstsyoejx.gjirafa.net/gj50/img/178530/img/1.jpg",
+        "https://hhstsyoejx.gjirafa.net/gj50/img/178530/img/2.jpg"
+      ]
+    },
+    {
+      "id": 14,
+      "categories": ["monitors", "pc hardware", "gaming"],
+      "name": "Monitor MSI Gaming Optix MAG281URF - LED 27.9, 4K UHD, i zi",
+      "image": "https://hhstsyoejx.gjirafa.net/gj50/img/136290/img/0.jpg",
+      "price": 482,
+      "dateEntered": "2021/08/10",
+      "stock": 2,
+      "sold": 9,
+      "seller": "aladinn",
+      "images": [
+        "https://hhstsyoejx.gjirafa.net/gj50/img/136290/img/1.jpg",
+        "https://hhstsyoejx.gjirafa.net/gj50/img/136290/img/2.jpg"
+      ]
+    },
+    {
+      "id": 15,
+      "categories": ["cameras"],
+      "name": "Fotoaparat Fujifilm Instax Wide 300 EX D, i bardhë/ kaftë",
+      "image": "https://hhstsyoejx.gjirafa.net/gj50/img/189275/img/0.jpg",
+      "price": 129,
+      "dateEntered": "2021/08/10",
+      "stock": 3,
+      "sold": 12,
+      "seller": "aladin",
+      "images": [
+        "https://hhstsyoejx.gjirafa.net/gj50/img/189275/img/1.jpg",
+        "https://hhstsyoejx.gjirafa.net/gj50/img/189275/img/2.jpg"
+      ]
+    },
+    {
+      "id": 16,
+      "categories": ["cameras"],
+      "name": "Kamerë Fujifilm X-T30 II, e zezë",
+      "image": "https://hhstsyoejx.gjirafa.net/gj50/img/172477/img/0.jpg",
+      "price": 971,
+      "dateEntered": "2021/08/10",
+      "stock": 5,
+      "sold": 2,
+      "seller": "aladin",
+      "images": ["https://hhstsyoejx.gjirafa.net/gj50/img/172477/img/1.jpg"]
+    },
+    {
+      "id": 17,
+      "categories": ["laptops", "macbook"],
+      "name": "Laptop Apple MacBook Pro 13.3'' (Touch Bar), M2 8-bërthama, 16 GB, 512 GB, 10-bërthama GPU, i argjendtë (M2, 2022), INT",
+      "image": "https://hhstsyoejx.gjirafa.net/gj50/img/188922/img/0.jpg",
+      "price": 2240,
+      "dateEntered": "2021/08/10",
+      "stock": 2,
+      "sold": 12,
+      "seller": "amer",
+      "images": ["https://hhstsyoejx.gjirafa.net/gj50/img/188922/img/2.jpg"]
+    },
+    {
+      "id": 18,
+      "categories": ["laptops", "macbook"],
+      "name": "Laptop Apple MacBook Pro 14, 14.2, M1 Pro 10-bërthamor, 32GB RAM LPDDR4X, 512GB SSD, GPU 14-bërthamore, i hirtë hapësire",
+      "image": "https://hhstsyoejx.gjirafa.net/gj50/img/170841/img/0.jpg",
+      "price": 2999,
+      "dateEntered": "2021/08/10",
+      "stock": 1,
+      "sold": 4,
+      "seller": "amer",
+      "images": ["https://hhstsyoejx.gjirafa.net/gj50/img/170841/img/2.jpg"]
+    },
+    {
+      "id": 19,
+      "categories": ["laptops", "hp"],
+      "name": "Laptop HP ZBook Power 15 G9, 15.6'', Intel Core i7, 32 GB RAM, 512 GB SSD, NVIDIA RTX A1000, i hirtë",
+      "image": "https://hhstsyoejx.gjirafa.net/gj50/img/187287/img/0.jpg",
+      "price": 2206,
+      "dateEntered": "2021/08/10",
+      "stock": 1,
+      "sold": 4,
+      "seller": "amer",
+      "images": [
+        "https://hhstsyoejx.gjirafa.net/gj50/img/187287/img/1.jpg",
+        "https://hhstsyoejx.gjirafa.net/gj50/img/187287/img/2.jpg"
+      ]
+    },
+    {
+      "id": 20,
+      "categories": ["smartphones", "xiaomi"],
+      "name": "Celular Xiaomi Redmi 10 2022, 6.5, 4GB RAM, 64GB, Sea Blue",
+      "image": "https://hhstsyoejx.gjirafa.net/gj50/img/187582/img/0.jpg",
+      "price": 218,
+      "dateEntered": "2021/08/10",
+      "stock": 40,
+      "sold": 5,
+      "seller": "amer",
+      "images": ["https://hhstsyoejx.gjirafa.net/gj50/img/187582/img/1.jpg"]
+    },
+    {
+      "id": 21,
+      "categories": ["shoes", "men", "nike"],
+      "name": "Nike Air Zoom Pegasus 39",
+      "image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/9a50da4b-eead-4330-8a03-05fa4957f765/air-zoom-pegasus-39-mens-road-running-shoes-d4dvtm.png",
+      "price": 130,
+      "dateEntered": "2021/08/10",
+      "stock": 40,
+      "sold": 5,
+      "seller": "amer",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/db84dd4f-9de7-431c-a204-3e99a38bc7f5/air-zoom-pegasus-39-mens-road-running-shoes-d4dvtm.png",
+        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/4f623813-77ff-4f4d-8c76-b39eb62a1c42/air-zoom-pegasus-39-mens-road-running-shoes-d4dvtm.png",
+        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/2ed689a0-54ff-4872-8576-b9d423e5e16c/air-zoom-pegasus-39-mens-road-running-shoes-d4dvtm.png",
+        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/5681c4ee-4b1c-43e6-b5d0-380044b7d9e0/air-zoom-pegasus-39-mens-road-running-shoes-d4dvtm.png",
+        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/84188bea-7ada-4f62-89df-172c08e23a9d/air-zoom-pegasus-39-mens-road-running-shoes-d4dvtm.png"
+      ]
+    },
+    {
+      "id": 22,
+      "categories": ["shoes", "men", "nike"],
+      "name": "Nike Wildhorse 7",
+      "image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/da172fd6-9c31-4c00-a621-81b79c46c5c8/wildhorse-7-mens-trail-running-shoes-rJ6R7V.png",
+      "price": 130,
+      "dateEntered": "2021/08/10",
+      "stock": 40,
+      "sold": 5,
+      "seller": "amer",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/8282ebee-3763-4c6a-b612-7620eae4c669/wildhorse-7-mens-trail-running-shoes-rJ6R7V.png",
+        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/55424b76-6925-4fc9-bcc4-bda1b0760e8f/wildhorse-7-mens-trail-running-shoes-rJ6R7V.png",
+        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/c38534a1-70ec-425d-8bcc-08bb0d9ec84d/wildhorse-7-mens-trail-running-shoes-rJ6R7V.png",
+        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/32accc2c-78fa-44be-99d5-d58bf787fbb4/wildhorse-7-mens-trail-running-shoes-rJ6R7V.png",
+        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/5aa6fc5a-083b-4c6c-8c8d-4125ac7db448/wildhorse-7-mens-trail-running-shoes-rJ6R7V.png"
+      ]
+    },
+    {
+      "id": 23,
+      "categories": ["shoes", "men", "nike"],
+      "name": "Nike Air Zoom Pegasus FlyEase",
+      "image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/70ad1a75-5216-4890-8262-a2985bb321b6/air-zoom-pegasus-flyease-mens-easy-on-off-road-running-shoes-extra-wide-7W5wmc.png",
+      "price": 130,
+      "dateEntered": "2021/08/10",
+      "stock": 40,
+      "sold": 5,
+      "seller": "amer",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/00a38ade-c65b-417d-a92f-33c8e201ddcb/air-zoom-pegasus-flyease-mens-easy-on-off-road-running-shoes-extra-wide-7W5wmc.png",
+        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/52b09285-56c2-4a5a-8e19-98e0ee0ceeef/air-zoom-pegasus-flyease-mens-easy-on-off-road-running-shoes-extra-wide-7W5wmc.png",
+        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/0cc574fd-0db7-4cb5-b54c-ad142d06f2f0/air-zoom-pegasus-flyease-mens-easy-on-off-road-running-shoes-extra-wide-7W5wmc.png",
+        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/4eef9f31-2e89-4e82-8c12-d8ce5afb0d94/air-zoom-pegasus-flyease-mens-easy-on-off-road-running-shoes-extra-wide-7W5wmc.png",
+        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/bc10ecc9-faf9-47cc-afd0-29c7fbe8e64a/air-zoom-pegasus-flyease-mens-easy-on-off-road-running-shoes-extra-wide-7W5wmc.png"
+      ]
+    },
+    {
+      "id": 24,
+      "categories": ["shoes", "men", "nike"],
+      "name": "Nike Air Zoom Tempo Next% FlyEase",
+      "image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/c1b22048-e2a3-4385-b084-04b3302825c7/air-zoom-tempo-next-flyease-mens-easy-on-off-road-running-shoes-jrvsrL.png",
+      "price": 139,
+      "dateEntered": "2021/08/10",
+      "stock": 40,
+      "sold": 5,
+      "seller": "amer",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a7eafd46-2360-46b8-b953-a9bde203eabb/air-zoom-tempo-next-flyease-mens-easy-on-off-road-running-shoes-jrvsrL.png",
+        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/14a720af-772d-4a2e-9571-36493921b049/air-zoom-tempo-next-flyease-mens-easy-on-off-road-running-shoes-jrvsrL.png",
+        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/d6796d1c-be3d-401d-8e36-80d9f916d0e1/air-zoom-tempo-next-flyease-mens-easy-on-off-road-running-shoes-jrvsrL.png",
+        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/f3af7753-cec2-490c-8539-84aa6fb580cc/air-zoom-tempo-next-flyease-mens-easy-on-off-road-running-shoes-jrvsrL.png",
+        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/616d7824-b723-46f9-9338-8e06dd80cebc/air-zoom-tempo-next-flyease-mens-easy-on-off-road-running-shoes-jrvsrL.png"
+      ]
     }
   ],
   "categories": [
@@ -84,7 +336,7 @@
     ["Nike", "Adidas", "Jordan", "Clarks", "Shoes"],
     ["Apple", "Xiaomi", "Samsung", "Smartphones"],
     ["Gamingconsoles", "Monitors", "GPUs", "Keyboards", "Mouses", "Gaming"],
-    ["CPU", "Motherboard", "ssd", "hdd", "PC hardware"],
+    ["CPU", "Motherboard", "ssd", "hdd", "GPUs", "Monitors", "PC hardware"],
     ["Cameras"],
     ["Cosmetics"],
     ["Macbook", "HP", "Laptops"],

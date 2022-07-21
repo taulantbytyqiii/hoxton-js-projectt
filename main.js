@@ -320,6 +320,12 @@ function createProduct(product) {
 
   stockDiv.append(p1, p2);
   prodImgWrapper.appendChild(prodImg);
+  if (product.stock === 0) {
+    let soldOut = document.createElement("h1");
+    soldOut.textContent = "SOLD";
+    soldOut.className = "sold-out";
+    prodImg.prepend(soldOut);
+  }
   prodDiv.append(prodImgWrapper, prodName, stockDiv, prodPrice, prodSold);
 
   return prodDiv;
