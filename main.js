@@ -346,11 +346,112 @@ function renderPage(product) {
     decision.append(div);
     productPageContent.append(decision);
   } else if (state.page === "profile-page") {
-    //Redi ktu ke me punu
-    //Redi ktu ke me punu
-    //Redi ktu ke me punu
-    //Redi ktu ke me punu
-    //Redi ktu ke me punu
+  //   <div class="goback profile-page-goback">
+  //   <span class="material-symbols-outlined go-back"> arrow_back </span>
+  // </div>
+    
+    let profilePageGoback = document.createElement("div");
+    profilePageGoback.className = "goback profile-page-goback";
+    let profilePageGobackIcon = document.createElement("span");
+    profilePageGobackIcon.className = "material-symbols-outlined go-back";
+    profilePageGobackIcon.textContent = "arrow_back";
+    profilePageGoback.append(profilePageGobackIcon);
+    page.append(profilePageGoback);
+    profilePageGoback.addEventListener("click", () => {
+      state.page = "home-page";
+      render();
+    });
+
+    let profileAvatarInfo = document.createElement("div");
+    profileAvatarInfo.className = "profile-avatar-info";
+    let profileAvatar = document.createElement("img");
+    profileAvatar.className = "profile-page-avatar";
+    profileAvatar.src = "./profile.png";
+    let profileUsername = document.createElement("h3");
+    profileUsername.className = "profile-username";
+    profileUsername.textContent = state.user.username;
+
+
+    let profileActions = document.createElement("div");
+    profileActions.className = "profile-actions";
+
+    let profileAction = document.createElement("div");
+    profileAction.className = "profile-action";
+
+    let profileAction2 = document.createElement("div");
+    profileAction2.className = "profile-action";
+
+    let profileAction3 = document.createElement("div");
+    profileAction3.className = "profile-action";
+
+    let profileAction4 = document.createElement("div");
+    profileAction4.className = "profile-action";
+
+    let profileAction5 = document.createElement("div");
+    profileAction5.className = "profile-action";
+
+    profileActions.append(
+      profileAction,
+      profileAction2,
+      profileAction3,
+      profileAction4,
+      profileAction5
+    );
+    profileAvatarInfo.append(profileAvatar, profileUsername, profileActions);
+    page.append(profileAvatarInfo);
+
+
+    let actionArea = document.createElement("div");
+    actionArea.className = "action-area";
+    let cartProdSection = document.createElement("div");
+    cartProdSection.className = "cart-prod-section order-history-prods";
+    let cartProd = document.createElement("div");
+    cartProd.className = "cart-prod order-prod";
+    let cartProdImage = document.createElement("img");
+    cartProdImage.className = "cart-prod-image";
+    cartProdImage.src = product.image;
+    let cartProdInfos = document.createElement("div");
+    cartProdInfos.className = "cart-prod-infos";
+    let namePrice = document.createElement("div");
+    namePrice.className = "name-price";
+    let namePriceSpan = document.createElement("span");
+    namePriceSpan.className = "name-price";
+    let namePriceStrong = document.createElement("strong");
+    namePriceStrong.textContent = product.name;
+    let namePriceSpan2 = document.createElement("span");
+    namePriceSpan2.className = "name-price";
+    let namePriceStrong2 = document.createElement("strong");
+    namePriceStrong2.className = "cart-prod-price";
+    namePriceStrong2.textContent = product.price;
+    let po = document.createElement("div");
+    po.className = "po";
+    let poSpan = document.createElement("span");
+    poSpan.className = "cart-prod-info";
+    poSpan.textContent = product.description;
+    let po2 = document.createElement("div");
+    po2.className = "po";
+    let poSpan2 = document.createElement("span");
+    poSpan2.className = "cart-prod-info";
+    poSpan2.textContent = product.shipping;
+
+    cartProdInfos.append(
+      namePrice,
+      namePriceSpan,
+      namePriceStrong,
+      namePriceSpan2,
+      namePriceStrong2,
+      po,
+      poSpan,
+      po2,
+      poSpan2
+    );
+    cartProd.append(cartProdImage, cartProdInfos);
+    cartProdSection.append(cartProd);
+    actionArea.append(cartProdSection);
+    page.append(actionArea);
+
+
+
   }
 }
 
