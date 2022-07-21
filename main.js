@@ -13,6 +13,7 @@ let state = {
   sortBySeller: "",
   modal: "",
   users: [],
+  page: "",
 };
 
 //Variables for the different parts of the page
@@ -22,13 +23,14 @@ let filterAside = document.querySelector(".filters-section");
 let prodSec = document.querySelector(".products-section");
 let footer = document.querySelector("footer");
 let modal = document.querySelector("#modal");
+let prodOrProfilePage = document.querySelector("#profile-or-product-page");
 
 //Main render function
 getCategories();
 function render() {
   prodSec.innerHTML = "";
-  header.innerHTML = "";
-  createHeader();
+  if (!header.childNodes.length) createHeader();
+
   for (let product of state.products) {
     if (filterProducts(product)) {
       prodSec.appendChild(createProduct(product));
@@ -109,6 +111,12 @@ function createRightHeaderSide() {
     let profileAvatar = document.createElement("img");
     profileAvatar.src = state.user.userimage;
     profileAvatar.className = "profile-avatar";
+    profileAvatar.addEventListener("click", function () {
+      header.style = "display: none;";
+      document.querySelector(".main-container").style = "display: none;";
+      modal.style = "display: none;";
+      state.page = "profile-page";
+    });
     if (state.user.onCart.length) {
       let onCartNumber = document.createElement("div");
       onCartNumber.textContent = state.user.onCart.length;
@@ -119,6 +127,17 @@ function createRightHeaderSide() {
     headerRightSideContainer.append(shoppingCart, profileAvatar);
   }
   return headerRightSideContainer;
+}
+
+function renderPage() {
+  let page = document.querySelector("#profile-or-product-page");
+  page.className = "profile-or-product-page";
+  if (state.page === "product-page") {
+    header.style = "display: none;";
+    document.querySelector(".main-container").style = "display: none;";
+    modal.style = "display: none;";
+    state.page = "profile-page";
+  }
 }
 
 //The function to create the footer
@@ -267,6 +286,10 @@ function renderCategories() {
 function createProduct(product) {
   let prodDiv = document.createElement("div");
   prodDiv.className = "product";
+  prodDiv.addEventListener("click", function () {
+    state.page = "product-page";
+    renderPage(product);
+  });
   let prodImgWrapper = document.createElement("div");
   prodImgWrapper.className = "product-image-wrapper";
   let prodImg = document.createElement("img");
@@ -411,11 +434,7 @@ function renderModal() {
     modalContent.remove();
     state.modal = "";
   });
-<<<<<<< HEAD
-  if ((state.modal === "login-or-signup")) {
-=======
   if (state.modal === "login-or-signup") {
->>>>>>> 27f82b87ec9d5120aa56663e301d05ab9348987e
     let h3El = document.createElement("h3");
     h3El.textContent = "Log in";
     let loginForm = document.createElement("form");
@@ -466,26 +485,115 @@ function renderModal() {
     modalContent.append(closeBtn, brandTitle, h3El, loginForm, p1, p2, p3);
     modal.appendChild(modalContent);
   } else if (state.modal === "create-account") {
-<<<<<<< HEAD
     let h1El = document.createElement("h1");
     h1El.textContent = "Hoxstore";
     let h3El = document.createElement("h3");
     h3El.textContent = "Create account";
     let createAccForm = document.createElement("form");
     createAccForm.className = "create-acc-form";
-    modal.append(createAccForm)
+    modalContent.className = "modal-content create-acc-modal";
+    closeBtn.className = `${closeBtn.className} success`;
     createAccForm.addEventListener("submit", function (e) {
       e.preventDefault();
-      if (!checkValidity(nameInput.value, emailInput.value, passwordInput.value)) {
+      if (
+        checkValidity(
+          emailInput.value,
+          "a",
+          nameInput.value,
+          passwordInput.value,
+          passwordInput2.value
+        )
+      ) {
+        console.log("ti qifsha");
         nameInput.value = "";
         emailInput.value = "";
         passwordInput.value = "";
+        passwordInput2.value = "";
+        errorText.textContent = "Something is wrong";
+      } else {
+        let newAcc = {
+          username: `${nameInput.value}`,
+          email: `${emailInput.value}`,
+          password: `${passwordInput.value}`,
+          userimage: "./profile.png",
+          balance: 500,
+          onCart: [],
+          bought: [],
+        };
+        fetch("http://localhost:3007/users", {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify(newAcc),
+        });
+        modalContent.innerHTML = "";
+        modalContent.innerHTML = "<h1>Account created succesfully</h1>";
+        modalContent.prepend(closeBtn);
+        state.users.push(newAcc);
+        console.log(state.users);
       }
-=======
-    //qitu ki me punu redi
+    });
+    let h4El = document.createElement("h4");
+    h4El.textContent = "What's your name?";
+    let nameInput = document.createElement("input");
+    nameInput.type = "text";
+    nameInput.required = true;
+    nameInput.placeholder = "Username";
+    let h4El2 = document.createElement("h4");
+    h4El2.textContent = "What's your email adress?";
+    let emailInput = document.createElement("input");
+    emailInput.type = "email";
+    emailInput.required = true;
+    emailInput.placeholder = "Email";
+    let h4El3 = document.createElement("h4");
+    h4El3.textContent = "What's your password?";
+    let passwordInput = document.createElement("input");
+    passwordInput.type = "password";
+    passwordInput.required = true;
+    passwordInput.placeholder = "Passworda";
+    let h4El4 = document.createElement("h4");
+    h4El4.textContent = "Confirm your password";
+    let passwordInput2 = document.createElement("input");
+    passwordInput2.type = "password";
+    passwordInput2.required = true;
+    passwordInput2.placeholder = "Confirm passworddd";
+    let divEl1 = document.createElement("div");
+    divEl1.className = "accept-TOS";
+
+    let tcCheckbox = document.createElement("p");
+    // tcCheckbox.required = true
+    tcCheckbox.id = "accept-text";
+    tcCheckbox.textContent = "I agree with the T&Cs.";
+    let tcCheckboxInput = document.createElement("input");
+    tcCheckboxInput.type = "checkbox";
+    tcCheckboxInput.required = true;
+    tcCheckboxInput.id = "accept";
+    divEl1.append(tcCheckbox, tcCheckboxInput);
+    // tcCheckbox.append(tcCheckboxInput);
+    let createAccBtn = document.createElement("input");
+    createAccBtn.type = "submit";
+    createAccBtn.value = "Create account";
+    createAccBtn.id = "create-acc-btn";
+    let errorText = document.createElement("p");
+    errorText.id = "create-acc-error-message";
+    createAccForm.append(
+      h4El,
+      nameInput,
+      h4El2,
+      emailInput,
+      h4El3,
+      passwordInput,
+      h4El4,
+      passwordInput2,
+      divEl1,
+      createAccBtn,
+      errorText
+    );
+    modalContent.append(closeBtn, brandTitle, h3El, createAccForm);
+    modal.append(modalContent);
   } else if (state.modal === "cart") {
     if (state.user.onCart.length === 0) {
->>>>>>> 27f82b87ec9d5120aa56663e301d05ab9348987e
     }
     modal.innerHTML = "";
     modalContent.innerHTML = "";
@@ -622,16 +730,38 @@ function renderModal() {
     modal.appendChild(modalContent);
   }
 }
-
-
-
 //Function to check for validity
-function checkValidity(emailt, passwordt) {
-  for (let user of state.users) {
-    if (user.email === emailt && user.password === passwordt) {
-      state.user = user;
-      return true;
+function checkValidity(emailt, passwordt, username, password1, password2) {
+  if (state.modal === "login-or-signup") {
+    for (let user of state.users) {
+      if (user.email === emailt && user.password === passwordt) {
+        state.user = user;
+        return true;
+      }
     }
+  } else if (state.modal === "create-account") {
+    for (let user of state.users) {
+      console.log(user.email, emailt);
+      console.log(user.username, username);
+      console.log(password1, password2);
+      if (user.email === emailt) {
+        return true;
+      }
+      if (user.username === username) {
+        return true;
+      }
+      if (password1 !== password2) {
+        return true;
+      }
+      // if (
+      //   user.email === emailt ||
+      //   user.username === username ||
+      //   password1 !== password2
+      // ) {
+      //   return false;
+      // }
+    }
+    return false;
   }
 }
 //Adding eventlisteners to sort by price and by seller forms
@@ -664,5 +794,6 @@ function getTheUsers() {
     .then((resp) => resp.json())
     .then((users) => {
       state.users = users;
+      console.log(state.users);
     });
 }
