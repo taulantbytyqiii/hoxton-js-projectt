@@ -4,7 +4,7 @@
 
 let state = {
   products: [],
-  userLoged: false,
+  user: false,
   selectedCategory: "",
   mainCategories: [],
   selectedCategories: [],
@@ -29,9 +29,11 @@ let prodOrProfilePage = document.querySelector("#profile-or-product-page");
 getCategories();
 function render() {
   prodSec.innerHTML = "";
+  header.innerHTML = "";
   if (!header.childNodes.length) createHeader();
+
   for (let product of state.products) {
-    if (filter(product)) {
+    if (filterProducts(product)) {
       prodSec.appendChild(createProduct(product));
     }
   }
@@ -41,7 +43,7 @@ function render() {
 // Get the products from database and call render();
 
 getProducts();
-
+getTheUsers();
 //The function to create the header
 
 function createHeader() {
@@ -82,8 +84,8 @@ function createHeader() {
 function createRightHeaderSide() {
   let headerRightSideContainer = document.createElement("div");
   headerRightSideContainer.className = "header__right-side-items";
-
-  if (!state.userLoged) {
+  //
+  if (!state.user) {
     let headerRightSide = document.createElement("div");
     headerRightSide.className = "header__right-side-no-user";
     headerRightSide.addEventListener("click", () => {
@@ -100,12 +102,16 @@ function createRightHeaderSide() {
     headerRightSide.append(pEl1, pEl2);
     headerRightSideContainer.appendChild(headerRightSide);
   } else {
+    headerRightSideContainer.innerHTML = "";
     let shoppingCart = document.createElement("span");
-    shoppingCart.className = "material-symbols-outlined";
+    shoppingCart.className = "material-symbols-outlined cart";
     shoppingCart.textContent = "shopping_cart";
+    shoppingCart.addEventListener("click", function () {
+      state.modal = "cart";
+      renderModal();
+    });
     let profileAvatar = document.createElement("img");
-    profileAvatar.src =
-      "https://m.media-amazon.com/images/I/71PGvPXpk5L._SL1500_.jpg";
+    profileAvatar.src = state.user.userimage;
     profileAvatar.className = "profile-avatar";
     profileAvatar.addEventListener("click", function () {
       header.style = "display: none;";
@@ -121,6 +127,8 @@ function createRightHeaderSide() {
     }
 
     headerRightSideContainer.append(shoppingCart, profileAvatar);
+    // header.append(headerRightSideContainer);
+    // return;
   }
   return headerRightSideContainer;
 }
@@ -319,7 +327,7 @@ function createProduct(product) {
 
 //Filter function that determines whether a product should be displayed
 
-function filterProducts(product) {
+function filterProductss(product) {
   if (state.selectedCategory !== "" && state.selectedCategories.length === 0) {
   }
   if (state.searchInput === "" && state.selectedCategories.length === 0)
@@ -345,7 +353,7 @@ function filterProducts(product) {
   }
   return null;
 }
-function filter(product) {
+function filterProducts(product) {
   if (state.searchInput) {
     if (!product.name.toLocaleLowerCase().includes(state.searchInput))
       return false;
@@ -401,6 +409,19 @@ function refreshFilter(divEl) {
   document.querySelector(".search-form").reset();
 }
 //Function to render modals
+// {
+//           "id": 3,
+//           "categories": ["clothes", "men", "jeans"],
+//           "name": "DARK WASH BOOT JEANS",
+//           "image": "https://img.hollisterco.com/is/image/anf/KIC_331-7300-1302-276_prod1?policy=product-large",
+//           "price": 49.99,
+//           "shipping": 4,
+//           "dateEntered": "2021/08/10",
+//           "stock": 10,
+//           "sold": 4,
+//           "seller": "aladin",
+//           "desc": "lorem lorem lorem lorem lorem lorem lorem"
+//         }
 function renderModal() {
   modal.innerHTML = "";
   modal.className = "modal";
@@ -422,14 +443,7 @@ function renderModal() {
     h3El.textContent = "Log in";
     let loginForm = document.createElement("form");
     loginForm.className = "log-in-form";
-    loginForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (!checkValidity(emailInput.value, passwordInput.value)) {
-        emailInput.value = "";
-        passwordInput.value = "";
-        p3.textContent = "Incorrect account details";
-      }
-    });
+
     let h4El = document.createElement("h4");
     h4El.textContent = "Email";
     let emailInput = document.createElement("input");
@@ -459,6 +473,22 @@ function renderModal() {
 
     let p3 = document.createElement("p");
     p3.id = "log-in-error-message";
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!checkValidity(emailInput.value, passwordInput.value)) {
+        emailInput.value = "";
+        passwordInput.value = "";
+        p3.textContent = "Incorrect account details";
+      } else {
+        modal.className = "";
+        console.log(state.user.onCart);
+        modalContent.remove();
+        createRightHeaderSide();
+        console.log("asdasdas");
+        console.log(state.user);
+        render();
+      }
+    });
     modalContent.append(closeBtn, brandTitle, h3El, loginForm, p1, p2, p3);
     modal.appendChild(modalContent);
   } else if (state.modal === "create-account") {
@@ -774,3 +804,30 @@ function getTheUsers() {
       console.log(state.users);
     });
 }
+
+//Function to add a product to the cart
+function addToCart(product) {
+  state.user.onCart.push(product);
+  fetch(`http://localhost:3007/users/${state.user.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: `${JSON.stringify(state.user)}`,
+  });
+}
+//Function to buy a product
+function buyProduct(product) {
+  state.user.bought.push(product);
+  state.user.balance -= product.price;
+  fetch(`http://localhost:3007/users/${state.user.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: `${JSON.stringify(state.user)}`,
+  });
+}
+
+//Function to goBack
+function goBack() {}

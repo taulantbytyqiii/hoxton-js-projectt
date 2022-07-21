@@ -21,94 +21,14 @@
       "bought": []
     },
     {
-      "username": "taulantbytyqi",
-      "email": "taulant@gmail.com",
-      "password": "taulant",
+      "username": "redi",
+      "email": "redi@gmail.com",
+      "password": "redi",
       "userimage": "./profile.png",
       "balance": 500,
       "onCart": [],
       "bought": [],
       "id": 3
-    },
-    {
-      "username": "amer",
-      "email": "amer@gmail.com",
-      "password": "amer",
-      "userimage": "./profile.png",
-      "balance": 500,
-      "onCart": [],
-      "bought": [],
-      "id": 4
-    },
-    {
-      "username": "asfaf",
-      "email": "asfasf@asfaf",
-      "password": "123123123",
-      "userimage": "./profile.png",
-      "balance": 500,
-      "onCart": [],
-      "bought": [],
-      "id": 5
-    },
-    {
-      "username": "asfafasfaf",
-      "email": "asfaf@asfa",
-      "password": "123123123",
-      "userimage": "./profile.png",
-      "balance": 500,
-      "onCart": [],
-      "bought": [],
-      "id": 6
-    },
-    {
-      "username": "dalldyshja",
-      "email": "asfa@ASfsaf",
-      "password": "123123123",
-      "userimage": "./profile.png",
-      "balance": 500,
-      "onCart": [],
-      "bought": [],
-      "id": 7
-    },
-    {
-      "username": "dalldyshjaaaaaaaaa",
-      "email": "safaf@asfaf",
-      "password": "123123123",
-      "userimage": "./profile.png",
-      "balance": 500,
-      "onCart": [],
-      "bought": [],
-      "id": 8
-    },
-    {
-      "username": "asfafaf@SAgagg",
-      "email": "taulantbytyqi223@gmail.com",
-      "password": "123123123",
-      "userimage": "./profile.png",
-      "balance": 500,
-      "onCart": [],
-      "bought": [],
-      "id": 9
-    },
-    {
-      "username": "amer",
-      "email": "taulantbytyqi223@gmail.com",
-      "password": "123123123",
-      "userimage": "./profile.png",
-      "balance": 500,
-      "onCart": [],
-      "bought": [],
-      "id": 10
-    },
-    {
-      "username": "nico",
-      "email": "nico@gmail.com",
-      "password": "nico",
-      "userimage": "./profile.png",
-      "balance": 500,
-      "onCart": [],
-      "bought": [],
-      "id": 11
     }
   ]
 }
