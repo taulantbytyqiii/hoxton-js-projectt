@@ -109,6 +109,16 @@
       "onCart": [],
       "bought": [],
       "id": 11
+    },
+    {
+      "username": "redi",
+      "email": "redi@gmail.com",
+      "password": "rediredi",
+      "userimage": "./profile.png",
+      "balance": 500,
+      "onCart": [],
+      "bought": [],
+      "id": 12
     }
   ]
 }
