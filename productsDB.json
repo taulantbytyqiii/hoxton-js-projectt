@@ -10,7 +10,10 @@
       "dateEntered": "2021/08/10",
       "stock": 10,
       "sold": 27,
-      "seller": "aladin"
+      "seller": "aladin",
+      "shipping": 32,
+      "images": [],
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 2,
@@ -21,7 +24,10 @@
       "dateEntered": "2021/08/10",
       "stock": 10,
       "sold": 5,
-      "seller": "aladin"
+      "seller": "aladin",
+      "shipping": 32,
+      "images": [],
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 3,
@@ -32,7 +38,10 @@
       "dateEntered": "2021/08/10",
       "stock": 0,
       "sold": 4,
-      "seller": "aladin"
+      "seller": "aladin",
+      "shipping": 32,
+      "images": [],
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 4,
@@ -43,7 +52,10 @@
       "dateEntered": "2021/08/10",
       "stock": 10,
       "sold": 190,
-      "seller": "aladin"
+      "seller": "aladin",
+      "shipping": 32,
+      "images": [],
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 5,
@@ -54,7 +66,10 @@
       "dateEntered": "2021/08/10",
       "stock": 6,
       "sold": 12,
-      "seller": "aladin"
+      "seller": "aladin",
+      "shipping": 32,
+      "images": [],
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 6,
@@ -65,7 +80,10 @@
       "dateEntered": "2021/08/10",
       "stock": 4,
       "sold": 48,
-      "seller": "taulant"
+      "seller": "taulant",
+      "shipping": 32,
+      "images": [],
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 7,
@@ -76,7 +94,10 @@
       "dateEntered": "2021/08/10",
       "stock": 2,
       "sold": 2,
-      "seller": "aladinn"
+      "seller": "aladinn",
+      "shipping": 32,
+      "images": [],
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 8,
@@ -88,7 +109,9 @@
       "stock": 8,
       "sold": 2,
       "seller": "aladinn",
-      "images": []
+      "shipping": 32,
+      "images": [],
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 9,
@@ -100,10 +123,12 @@
       "stock": 8,
       "sold": 2,
       "seller": "aladinn",
+      "shipping": 32,
       "images": [
         "https://hhstsyoejx.gjirafa.net/gj50/img/188016/img/1.jpg",
         "https://hhstsyoejx.gjirafa.net/gj50/img/188016/img/2.jpg"
-      ]
+      ],
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 10,
@@ -115,10 +140,12 @@
       "stock": 8,
       "sold": 2,
       "seller": "aladinn",
+      "shipping": 32,
       "images": [
         "https://hhstsyoejx.gjirafa.net/gj50/img/176649/img/1.jpg",
         "https://hhstsyoejx.gjirafa.net/gj50/img/176649/img/2.jpg"
-      ]
+      ],
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 11,
@@ -130,10 +157,12 @@
       "stock": 0,
       "sold": 2,
       "seller": "aladinn",
+      "shipping": 32,
       "images": [
         "https://hhstsyoejx.gjirafa.net/gj50/img/188974/img/1.jpg",
         "https://hhstsyoejx.gjirafa.net/gj50/img/188974/img/2.jpg"
-      ]
+      ],
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 12,
@@ -145,10 +174,12 @@
       "stock": 8,
       "sold": 2,
       "seller": "aladinn",
+      "shipping": 32,
       "images": [
         "https://hhstsyoejx.gjirafa.net/gj50/img/184577/img/1.jpg",
         "https://hhstsyoejx.gjirafa.net/gj50/img/184577/img/2.jpg"
-      ]
+      ],
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 13,
@@ -160,10 +191,12 @@
       "stock": 20,
       "sold": 30,
       "seller": "aladinn",
+      "shipping": 32,
       "images": [
         "https://hhstsyoejx.gjirafa.net/gj50/img/178530/img/1.jpg",
         "https://hhstsyoejx.gjirafa.net/gj50/img/178530/img/2.jpg"
-      ]
+      ],
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 14,
@@ -175,10 +208,12 @@
       "stock": 2,
       "sold": 9,
       "seller": "aladinn",
+      "shipping": 32,
       "images": [
         "https://hhstsyoejx.gjirafa.net/gj50/img/136290/img/1.jpg",
         "https://hhstsyoejx.gjirafa.net/gj50/img/136290/img/2.jpg"
-      ]
+      ],
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 15,
@@ -190,10 +225,12 @@
       "stock": 3,
       "sold": 12,
       "seller": "aladin",
+      "shipping": 32,
       "images": [
         "https://hhstsyoejx.gjirafa.net/gj50/img/189275/img/1.jpg",
         "https://hhstsyoejx.gjirafa.net/gj50/img/189275/img/2.jpg"
-      ]
+      ],
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 16,
@@ -205,7 +242,9 @@
       "stock": 5,
       "sold": 2,
       "seller": "aladin",
-      "images": ["https://hhstsyoejx.gjirafa.net/gj50/img/172477/img/1.jpg"]
+      "shipping": 32,
+      "images": ["https://hhstsyoejx.gjirafa.net/gj50/img/172477/img/1.jpg"],
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 17,
@@ -217,7 +256,9 @@
       "stock": 2,
       "sold": 12,
       "seller": "amer",
-      "images": ["https://hhstsyoejx.gjirafa.net/gj50/img/188922/img/2.jpg"]
+      "shipping": 32,
+      "images": ["https://hhstsyoejx.gjirafa.net/gj50/img/188922/img/2.jpg"],
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 18,
@@ -229,7 +270,9 @@
       "stock": 1,
       "sold": 4,
       "seller": "amer",
-      "images": ["https://hhstsyoejx.gjirafa.net/gj50/img/170841/img/2.jpg"]
+      "shipping": 32,
+      "images": ["https://hhstsyoejx.gjirafa.net/gj50/img/170841/img/2.jpg"],
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 19,
@@ -241,10 +284,12 @@
       "stock": 1,
       "sold": 4,
       "seller": "amer",
+      "shipping": 32,
       "images": [
         "https://hhstsyoejx.gjirafa.net/gj50/img/187287/img/1.jpg",
         "https://hhstsyoejx.gjirafa.net/gj50/img/187287/img/2.jpg"
-      ]
+      ],
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 20,
@@ -256,7 +301,9 @@
       "stock": 40,
       "sold": 5,
       "seller": "amer",
-      "images": ["https://hhstsyoejx.gjirafa.net/gj50/img/187582/img/1.jpg"]
+      "shipping": 32,
+      "images": ["https://hhstsyoejx.gjirafa.net/gj50/img/187582/img/1.jpg"],
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 21,
@@ -268,13 +315,15 @@
       "stock": 40,
       "sold": 5,
       "seller": "amer",
+      "shipping": 32,
       "images": [
         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/db84dd4f-9de7-431c-a204-3e99a38bc7f5/air-zoom-pegasus-39-mens-road-running-shoes-d4dvtm.png",
         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/4f623813-77ff-4f4d-8c76-b39eb62a1c42/air-zoom-pegasus-39-mens-road-running-shoes-d4dvtm.png",
         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/2ed689a0-54ff-4872-8576-b9d423e5e16c/air-zoom-pegasus-39-mens-road-running-shoes-d4dvtm.png",
         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/5681c4ee-4b1c-43e6-b5d0-380044b7d9e0/air-zoom-pegasus-39-mens-road-running-shoes-d4dvtm.png",
         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/84188bea-7ada-4f62-89df-172c08e23a9d/air-zoom-pegasus-39-mens-road-running-shoes-d4dvtm.png"
-      ]
+      ],
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 22,
@@ -286,13 +335,15 @@
       "stock": 40,
       "sold": 5,
       "seller": "amer",
+      "shipping": 32,
       "images": [
         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/8282ebee-3763-4c6a-b612-7620eae4c669/wildhorse-7-mens-trail-running-shoes-rJ6R7V.png",
         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/55424b76-6925-4fc9-bcc4-bda1b0760e8f/wildhorse-7-mens-trail-running-shoes-rJ6R7V.png",
         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/c38534a1-70ec-425d-8bcc-08bb0d9ec84d/wildhorse-7-mens-trail-running-shoes-rJ6R7V.png",
         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/32accc2c-78fa-44be-99d5-d58bf787fbb4/wildhorse-7-mens-trail-running-shoes-rJ6R7V.png",
         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/5aa6fc5a-083b-4c6c-8c8d-4125ac7db448/wildhorse-7-mens-trail-running-shoes-rJ6R7V.png"
-      ]
+      ],
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 23,
@@ -304,13 +355,15 @@
       "stock": 40,
       "sold": 5,
       "seller": "amer",
+      "shipping": 32,
       "images": [
         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/00a38ade-c65b-417d-a92f-33c8e201ddcb/air-zoom-pegasus-flyease-mens-easy-on-off-road-running-shoes-extra-wide-7W5wmc.png",
         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/52b09285-56c2-4a5a-8e19-98e0ee0ceeef/air-zoom-pegasus-flyease-mens-easy-on-off-road-running-shoes-extra-wide-7W5wmc.png",
         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/0cc574fd-0db7-4cb5-b54c-ad142d06f2f0/air-zoom-pegasus-flyease-mens-easy-on-off-road-running-shoes-extra-wide-7W5wmc.png",
         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/4eef9f31-2e89-4e82-8c12-d8ce5afb0d94/air-zoom-pegasus-flyease-mens-easy-on-off-road-running-shoes-extra-wide-7W5wmc.png",
         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/bc10ecc9-faf9-47cc-afd0-29c7fbe8e64a/air-zoom-pegasus-flyease-mens-easy-on-off-road-running-shoes-extra-wide-7W5wmc.png"
-      ]
+      ],
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 24,
@@ -322,13 +375,15 @@
       "stock": 40,
       "sold": 5,
       "seller": "amer",
+      "shipping": 32,
       "images": [
         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a7eafd46-2360-46b8-b953-a9bde203eabb/air-zoom-tempo-next-flyease-mens-easy-on-off-road-running-shoes-jrvsrL.png",
         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/14a720af-772d-4a2e-9571-36493921b049/air-zoom-tempo-next-flyease-mens-easy-on-off-road-running-shoes-jrvsrL.png",
         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/d6796d1c-be3d-401d-8e36-80d9f916d0e1/air-zoom-tempo-next-flyease-mens-easy-on-off-road-running-shoes-jrvsrL.png",
         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/f3af7753-cec2-490c-8539-84aa6fb580cc/air-zoom-tempo-next-flyease-mens-easy-on-off-road-running-shoes-jrvsrL.png",
         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/616d7824-b723-46f9-9338-8e06dd80cebc/air-zoom-tempo-next-flyease-mens-easy-on-off-road-running-shoes-jrvsrL.png"
-      ]
+      ],
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     }
   ],
   "categories": [

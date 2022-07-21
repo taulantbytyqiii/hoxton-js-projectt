@@ -777,7 +777,7 @@ footer {
   border: 2px solid #aaaaaaba;
   border-radius: 50%;
 }
-.profile-page-content {
+/* .profile-page-content {
   display: grid;
   height: 800px;
   width: 100%;
@@ -815,8 +815,8 @@ footer {
   color: black;
   font-family: Arial, Helvetica, sans-serif;
   margin-left: 40px;
-  margin-top: 10px;
-}
+  margin-top: 10px; */
+/* } */
 .sold-out {
   position: absolute;
   font-family: roboto;
@@ -830,6 +830,86 @@ footer {
   z-index: 10000;
   background-color: #969595bc;
   /* transform: rotate(45deg); */
+}
+.info-about-purchase {
+  padding-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  color: green;
+}
+#profile-page {
+  height: 100vh;
+  width: 100vw;
+  padding: 0px 300px;
+  padding-top: 30px;
+  position: relative;
+}
+.profile-page-goback {
+  margin: 0px;
+}
+.profile-avatar-info {
+  height: 400px;
+  /* background-color: red; */
+  margin-top: 70px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr;
+}
+.profile-page-avatar {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  border: #2861f2b6 4px solid;
+  padding: 7px;
+}
+.profile-username {
+  font-family: roboto;
+  font-size: 30px;
+  margin-left: 20px;
+}
+.profile-actions {
+  height: 100px;
+  /* background-color: red; */
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  gap: 30px;
+  align-items: center;
+}
+.profile-action {
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  border: 1px solid #aaaaaa;
+  border-radius: 5px;
+  box-shadow: 5px 5px 20px 1px gray;
+}
+.profile-action:hover {
+  /* border: none; */
+  background-color: #2860f2;
+  color: white;
+}
+.action-area {
+  height: 432px;
+  /* background-color: red; */
+  margin-top: 40px;
+}
+.order-history-prods {
+  margin-right: 0px;
+  width: 100%;
+  display: grid;
+  /* grid-auto-flow: column; */
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  overflow-y: scroll;
+  height: 520px;
+}
+.order-prod {
+  /* border-radius: 12px; */
+  border: 2px solid #aaaaaa;
+  background-color: white;
+  padding: 30px;
+  max-height: 230px;
 }
 /* .cart-modal-desc {
   display: grid;

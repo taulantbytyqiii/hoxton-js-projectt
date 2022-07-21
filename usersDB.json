@@ -25,9 +25,132 @@
       "email": "redi@gmail.com",
       "password": "redi",
       "userimage": "./profile.png",
-      "balance": 500,
+      "balance": 100,
       "onCart": [],
-      "bought": [],
+      "bought": [
+        {
+          "seller": "aladin",
+          "id": 1,
+          "categories": [
+            "technology",
+            "smartphones"
+          ],
+          "name": "Apple iPhone 11",
+          "image": "https://i.ebayimg.com/images/g/BWcAAOSwxdZiMK81/s-l640.jpg",
+          "price": 230,
+          "dateEntered": "2021/08/10",
+          "stock": 10,
+          "sold": 27,
+          "shipping": 32,
+          "images": []
+        },
+        {
+          "seller": "aladin",
+          "id": 1,
+          "categories": [
+            "technology",
+            "smartphones"
+          ],
+          "name": "Apple iPhone 11",
+          "image": "https://i.ebayimg.com/images/g/BWcAAOSwxdZiMK81/s-l640.jpg",
+          "price": 230,
+          "dateEntered": "2021/08/10",
+          "stock": 10,
+          "sold": 27,
+          "shipping": 32,
+          "images": []
+        },
+        {
+          "id": 2,
+          "categories": [
+            "technology",
+            "gaming",
+            "gamingconsoles"
+          ],
+          "name": "Sony Playstation 4",
+          "image": "https://m.media-amazon.com/images/I/71PGvPXpk5L._SL1500_.jpg",
+          "price": 120,
+          "dateEntered": "2021/08/10",
+          "stock": 10,
+          "sold": 5,
+          "seller": "aladin",
+          "shipping": 32,
+          "images": [],
+          "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
+        },
+        {
+          "id": 2,
+          "categories": [
+            "technology",
+            "gaming",
+            "gamingconsoles"
+          ],
+          "name": "Sony Playstation 4",
+          "image": "https://m.media-amazon.com/images/I/71PGvPXpk5L._SL1500_.jpg",
+          "price": 120,
+          "dateEntered": "2021/08/10",
+          "stock": 10,
+          "sold": 5,
+          "seller": "aladin",
+          "shipping": 32,
+          "images": [],
+          "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
+        },
+        {
+          "id": 2,
+          "categories": [
+            "technology",
+            "gaming",
+            "gamingconsoles"
+          ],
+          "name": "Sony Playstation 4",
+          "image": "https://m.media-amazon.com/images/I/71PGvPXpk5L._SL1500_.jpg",
+          "price": 120,
+          "dateEntered": "2021/08/10",
+          "stock": 10,
+          "sold": 5,
+          "seller": "aladin",
+          "shipping": 32,
+          "images": [],
+          "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
+        },
+        {
+          "id": 2,
+          "categories": [
+            "technology",
+            "gaming",
+            "gamingconsoles"
+          ],
+          "name": "Sony Playstation 4",
+          "image": "https://m.media-amazon.com/images/I/71PGvPXpk5L._SL1500_.jpg",
+          "price": 120,
+          "dateEntered": "2021/08/10",
+          "stock": 10,
+          "sold": 5,
+          "seller": "aladin",
+          "shipping": 32,
+          "images": [],
+          "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
+        },
+        {
+          "id": 2,
+          "categories": [
+            "technology",
+            "gaming",
+            "gamingconsoles"
+          ],
+          "name": "Sony Playstation 4",
+          "image": "https://m.media-amazon.com/images/I/71PGvPXpk5L._SL1500_.jpg",
+          "price": 120,
+          "dateEntered": "2021/08/10",
+          "stock": 10,
+          "sold": 5,
+          "seller": "aladin",
+          "shipping": 32,
+          "images": [],
+          "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
+        }
+      ],
       "id": 3
     },
     {
@@ -109,16 +232,6 @@
       "onCart": [],
       "bought": [],
       "id": 11
-    },
-    {
-      "username": "redi",
-      "email": "redi@gmail.com",
-      "password": "rediredi",
-      "userimage": "./profile.png",
-      "balance": 500,
-      "onCart": [],
-      "bought": [],
-      "id": 12
     }
   ]
 }

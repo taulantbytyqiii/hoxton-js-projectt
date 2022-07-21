@@ -118,6 +118,8 @@ function createRightHeaderSide() {
       document.querySelector(".main-container").style = "display: none;";
       modal.style = "display: none;";
       state.page = "profile-page";
+      document.querySelector("#profile-pag").id = "profile-page";
+      state.page = "profile-page";
     });
     if (state.user.onCart.length) {
       let onCartNumber = document.createElement("div");
@@ -165,58 +167,69 @@ function renderPage(product) {
     let productPageContent = document.createElement("div");
     productPageContent.className = "product-page-content";
     let productOtherImages = document.createElement("div");
+
     productOtherImages.className = "product-other-images";
-    let productOtherImageContainer = document.createElement("div");
-    productOtherImageContainer.className = "product-other-image-container";
-    let productOtherImage = document.createElement("img");
-    productOtherImage.className = "product-other-image";
-    productOtherImage.src = product.image;
-    productOtherImageContainer.append(productOtherImage);
-    productOtherImages.append(productOtherImageContainer);
+
+    // let productOtherImageContainer = document.createElement("div");
+    // productOtherImageContainer.className = "product-other-image-container";
+    // let productOtherImage = document.createElement("img");
+    // productOtherImage.className = "product-other-image";
+    // productOtherImage.src = product.image;
+    // productOtherImageContainer.append(productOtherImage);
+    // productOtherImages.append(productOtherImageContainer);
     productPageContent.append(productOtherImages);
     page.append(productPageContent);
 
-    let productOtherImageContainer2 = document.createElement("div");
-    productOtherImageContainer2.className = "product-other-image-container";
-    let productOtherImage2 = document.createElement("img");
-    productOtherImage2.className = "product-other-image";
-    productOtherImage2.src = "state.product.image2";
+    // let productOtherImageContainer2 = document.createElement("div");
+    // productOtherImageContainer2.className = "product-other-image-container";
+    // let productOtherImage2 = document.createElement("img");
+    // productOtherImage2.className = "product-other-image";
+    // productOtherImage2.src = "";
 
-    productOtherImageContainer2.append(productOtherImage2);
-    productOtherImages.append(productOtherImageContainer2);
-    productPageContent.append(productOtherImages);
-    page.append(productPageContent);
+    for (let image of product.images) {
+      let productOtherImageContainer = document.createElement("div");
+      productOtherImageContainer.addEventListener("click", function () {
+        productThumbnailImage.src = image;
+      });
+      productOtherImageContainer.className = "product-other-image-container";
+      let productOtherImage = document.createElement("img");
+      productOtherImage.className = "product-other-image";
+      productOtherImage.src = image;
+      productOtherImageContainer.append(productOtherImage);
+      productOtherImages.append(productOtherImageContainer);
+    }
+    // productOtherImageContainer2.append(productOtherImage2);
+    // productOtherImages.append(productOtherImageContainer2);
+    // productPageContent.append(productOtherImages);
 
-    let productOtherImageContainer3 = document.createElement("div");
-    productOtherImageContainer3.className = "product-other-image-container";
-    let productOtherImage3 = document.createElement("img");
-    productOtherImage3.className = "product-other-image";
-    productOtherImage3.src = "";
+    // let productOtherImageContainer3 = document.createElement("div");
+    // productOtherImageContainer3.className = "product-other-image-container";
+    // let productOtherImage3 = document.createElement("img");
+    // productOtherImage3.className = "product-other-image";
+    // productOtherImage3.src = "";
 
-    productOtherImageContainer3.append(productOtherImage3);
-    productOtherImages.append(productOtherImageContainer3);
-    productPageContent.append(productOtherImages);
-    page.append(productPageContent);
+    // productOtherImageContainer3.append(productOtherImage3);
+    // productOtherImages.append(productOtherImageContainer3);
+    // productPageContent.append(productOtherImages);
 
-    let productOtherImageContainer4 = document.createElement("div");
-    productOtherImageContainer4.className = "product-other-image-container";
-    let productOtherImage4 = document.createElement("img");
-    productOtherImage4.className = "product-other-image";
+    // let productOtherImageContainer4 = document.createElement("div");
+    // productOtherImageContainer4.className = "product-other-image-container";
+    // let productOtherImage4 = document.createElement("img");
+    // productOtherImage4.className = "product-other-image";
 
-    productOtherImageContainer4.append(productOtherImage4);
-    productOtherImages.append(productOtherImageContainer4);
-    productPageContent.append(productOtherImages);
-    page.append(productPageContent);
+    // productOtherImageContainer4.append(productOtherImage4);
+    // productOtherImages.append(productOtherImageContainer4);
+    // productPageContent.append(productOtherImages);
 
-    let productOtherImageContainer5 = document.createElement("div");
-    productOtherImageContainer5.className = "product-other-image-container";
-    let productOtherImage5 = document.createElement("img");
-    productOtherImage5.className = "product-other-image";
+    // let productOtherImageContainer5 = document.createElement("div");
+    // productOtherImageContainer5.className = "product-other-image-container";
+    // let productOtherImage5 = document.createElement("img");
+    // productOtherImage5.className = "product-other-image";
 
-    productOtherImageContainer5.append(productOtherImage5);
-    productOtherImages.append(productOtherImageContainer5);
-    productPageContent.append(productOtherImages);
-    page.append(productPageContent);
+    // productOtherImageContainer5.append(productOtherImage5);
+    // productOtherImages.append(productOtherImageContainer5);
+    // productPageContent.append(productOtherImages);
+    // page.append(productPageContent);
 
     let productThumbnail = document.createElement("div");
     productThumbnail.className = "product-thumbnail";
@@ -224,61 +237,67 @@ function renderPage(product) {
     productThumbnailContainer.className = "product-thumbnail-container";
     let productThumbnailImage = document.createElement("img");
     productThumbnailImage.className = "product-thumbnail";
-    productThumbnailImage.src = state.product.image;
+    productThumbnailImage.src = product.image;
     productThumbnailContainer.append(productThumbnailImage);
     productThumbnail.append(productThumbnailContainer);
-    page.append(productThumbnail);
+    productPageContent.append(productThumbnail);
+    //
 
     let productInfos = document.createElement("div");
     productInfos.className = "productt-infos";
     let productName = document.createElement("h1");
     productName.className = "productt-name";
-    productName.textContent = state.product.name;
+    productName.textContent = product.name;
     let productSeller = document.createElement("p");
     productSeller.className = "productt-seller";
-    productSeller.textContent = "";
+    let username = !state.user.username ? "" : `@${state.user.username}`;
+    productSeller.textContent = `${username}`;
     let productPrice = document.createElement("h1");
     productPrice.className = "productt-price";
-    productPrice.textContent = "";
+    productPrice.textContent = `$${product.price.toFixed(2)}`;
     let productShipping = document.createElement("h3");
     productShipping.className = "productt-shipping";
-    productShipping.textContent = "";
+    productShipping.textContent = `Shipping: $${product.shipping.toFixed(2)}`;
     productInfos.append(
       productName,
       productSeller,
       productPrice,
       productShipping
     );
-    page.append(productInfos);
 
     let productDescContainer = document.createElement("div");
     productDescContainer.className = "productt-desc-container";
     let productDesc = document.createElement("p");
     productDesc.className = "productt-desc";
-    productDesc.textContent = state.product.description;
+    productDesc.textContent = product.desc;
     productDescContainer.append(productDesc);
-    page.append(productDescContainer);
+    productInfos.append(productDescContainer);
 
     let productSold = document.createElement("h4");
     productSold.className = "productt-sold";
-    productSold.textContent = "";
-    page.append(productSold);
+    productSold.textContent = `Sold ${product.sold}`;
+    productInfos.append(productSold);
+    productPageContent.append(productInfos);
+
+    //sadsad
 
     let decision = document.createElement("div");
     decision.className = "decision";
     let decisionUnit = document.createElement("div");
     decisionUnit.className = "decision-unit";
     let decisionUnitText = document.createElement("div");
-    decisionUnitText.className = "decision-unit-text";
     let productPriceDecision = document.createElement("h1");
     productPriceDecision.className = "productt-price";
-    productPriceDecision.textContent = "";
+    productPriceDecision.textContent = `$${product.price.toFixed(2)}`;
     let productShippingDecision = document.createElement("h3");
     productShippingDecision.className = "productt-shipping";
-    productShippingDecision.textContent = " ";
+    productShippingDecision.textContent = `Shipping: $${product.shipping.toFixed(
+      2
+    )}`;
     let productOnStockDecision = document.createElement("h4");
     productOnStockDecision.className = "productt-on-stock";
-    productOnStockDecision.textContent = "";
+    let inStock = !product.stock ? "No Stock" : "In stock";
+    productOnStockDecision.textContent = inStock;
     decisionUnitText.append(
       productPriceDecision,
       productShippingDecision,
@@ -286,31 +305,52 @@ function renderPage(product) {
     );
     decisionUnit.append(decisionUnitText);
     decision.append(decisionUnit);
-    page.append(decision);
+    productPageContent.append(decision);
 
     let productButtonContainer = document.createElement("div");
     productButtonContainer.className = "productt-button-container";
     let productTotal = document.createElement("h1");
     productTotal.className = "productt-total";
-    productTotal.textContent = "state.product.price";
+    productTotal.textContent = `Total: $${(
+      product.price + product.shipping
+    ).toFixed(2)}`;
     let productButtonAddToCart = document.createElement("button");
     productButtonAddToCart.className = "productt-button add-to-cart";
     productButtonAddToCart.textContent = "Add to cart";
     productButtonAddToCart.addEventListener("click", () => {
-      addToCart(state.product);
+      addToCart(product);
     });
     let productButtonBuyNow = document.createElement("button");
     productButtonBuyNow.className = "productt-button";
     productButtonBuyNow.textContent = "Buy now";
     productButtonBuyNow.addEventListener("click", () => {
-      buyProduct(state.product);
+      if (state.user.balance < product.price + product.shipping) {
+        div.textContent = "Not enough balance";
+        div.style = "color: red;";
+        return;
+      } else {
+        div.textContent = "Purchase was successful";
+        div.style = "color: green;";
+        buyProduct(product);
+      }
     });
     productButtonContainer.append(
       productTotal,
       productButtonAddToCart,
       productButtonBuyNow
     );
-    page.append(productButtonContainer);
+    decisionUnit.append(productButtonContainer);
+    let div = document.createElement("div");
+    div.className = "info-about-purchase";
+
+    decision.append(div);
+    productPageContent.append(decision);
+  } else if (state.page === "profile-page") {
+    //Redi ktu ke me punu
+    //Redi ktu ke me punu
+    //Redi ktu ke me punu
+    //Redi ktu ke me punu
+    //Redi ktu ke me punu
   }
 }
 
