@@ -133,7 +133,7 @@ function createRightHeaderSide() {
   return headerRightSideContainer;
 }
 
-function renderPage() {
+function renderPage(product) {
   let page = document.querySelector("#profile-or-product-page");
   page.className = "profile-or-product-page";
   if (state.page === "product-page") {
@@ -141,23 +141,26 @@ function renderPage() {
     document.querySelector(".main-container").style = "display: none;";
     modal.style = "display: none;";
     state.page = "profile-page";
-      
+
     let h1El = document.createElement("h1");
     h1El.className = "hoxstore-title";
-    let goBack = document.createElement("div");
-    goBack.className = "goback";
-    let goBackIcon = document.createElement("span");
-    goBackIcon.className = "material-symbols-outlined go-back";
-    goBackIcon.textContent = "arrow_back";
-    goBack.addEventListener("click", () => {
-      state.page = "product-page";
-      renderPage();
-    }
-    );
-    goBack.appendChild(goBackIcon);
-    h1El.prepend(goBack);
-    h1El.textContent = "Hoxstore";
+
+    h1El.innerHTML = `<div class="goback">
+          <span class="material-symbols-outlined go-back"> arrow_back </span>
+        </div>
+        Hoxstore`;
+    // h1El.textContent = "Hoxstore";
     page.appendChild(h1El);
+    let goBack = document.querySelector(".goback");
+    goBack.addEventListener("click", () => {
+      page.className = "";
+      page.innerHTML = "";
+      header.style = "display: grid;";
+      document.querySelector(".main-container").style = "display: auto;";
+      modal.style = "display: grid;";
+      state.page = "";
+      render();
+    });
 
     let productPageContent = document.createElement("div");
     productPageContent.className = "product-page-content";
@@ -167,36 +170,34 @@ function renderPage() {
     productOtherImageContainer.className = "product-other-image-container";
     let productOtherImage = document.createElement("img");
     productOtherImage.className = "product-other-image";
-    productOtherImage.src = state.product.image;
+    productOtherImage.src = product.image;
     productOtherImageContainer.append(productOtherImage);
     productOtherImages.append(productOtherImageContainer);
     productPageContent.append(productOtherImages);
     page.append(productPageContent);
 
-
     let productOtherImageContainer2 = document.createElement("div");
     productOtherImageContainer2.className = "product-other-image-container";
     let productOtherImage2 = document.createElement("img");
     productOtherImage2.className = "product-other-image";
-    productOtherImage2.src = 'state.product.image2'; 
+    productOtherImage2.src = "state.product.image2";
 
     productOtherImageContainer2.append(productOtherImage2);
     productOtherImages.append(productOtherImageContainer2);
     productPageContent.append(productOtherImages);
     page.append(productPageContent);
 
- 
     let productOtherImageContainer3 = document.createElement("div");
     productOtherImageContainer3.className = "product-other-image-container";
     let productOtherImage3 = document.createElement("img");
     productOtherImage3.className = "product-other-image";
-    productOtherImage3.src = ''
-    
+    productOtherImage3.src = "";
+
     productOtherImageContainer3.append(productOtherImage3);
     productOtherImages.append(productOtherImageContainer3);
     productPageContent.append(productOtherImages);
     page.append(productPageContent);
-    
+
     let productOtherImageContainer4 = document.createElement("div");
     productOtherImageContainer4.className = "product-other-image-container";
     let productOtherImage4 = document.createElement("img");
@@ -206,12 +207,12 @@ function renderPage() {
     productOtherImages.append(productOtherImageContainer4);
     productPageContent.append(productOtherImages);
     page.append(productPageContent);
-    
+
     let productOtherImageContainer5 = document.createElement("div");
     productOtherImageContainer5.className = "product-other-image-container";
     let productOtherImage5 = document.createElement("img");
     productOtherImage5.className = "product-other-image";
-    
+
     productOtherImageContainer5.append(productOtherImage5);
     productOtherImages.append(productOtherImageContainer5);
     productPageContent.append(productOtherImages);
@@ -242,7 +243,12 @@ function renderPage() {
     let productShipping = document.createElement("h3");
     productShipping.className = "productt-shipping";
     productShipping.textContent = "";
-    productInfos.append(productName, productSeller, productPrice, productShipping);
+    productInfos.append(
+      productName,
+      productSeller,
+      productPrice,
+      productShipping
+    );
     page.append(productInfos);
 
     let productDescContainer = document.createElement("div");
@@ -273,7 +279,11 @@ function renderPage() {
     let productOnStockDecision = document.createElement("h4");
     productOnStockDecision.className = "productt-on-stock";
     productOnStockDecision.textContent = "";
-    decisionUnitText.append(productPriceDecision, productShippingDecision, productOnStockDecision);
+    decisionUnitText.append(
+      productPriceDecision,
+      productShippingDecision,
+      productOnStockDecision
+    );
     decisionUnit.append(decisionUnitText);
     decision.append(decisionUnit);
     page.append(decision);
@@ -288,18 +298,19 @@ function renderPage() {
     productButtonAddToCart.textContent = "Add to cart";
     productButtonAddToCart.addEventListener("click", () => {
       addToCart(state.product);
-    }
-    );
+    });
     let productButtonBuyNow = document.createElement("button");
     productButtonBuyNow.className = "productt-button";
     productButtonBuyNow.textContent = "Buy now";
     productButtonBuyNow.addEventListener("click", () => {
       buyProduct(state.product);
-    }
+    });
+    productButtonContainer.append(
+      productTotal,
+      productButtonAddToCart,
+      productButtonBuyNow
     );
-    productButtonContainer.append(productTotal, productButtonAddToCart, productButtonBuyNow);
     page.append(productButtonContainer);
-
   }
 }
 
