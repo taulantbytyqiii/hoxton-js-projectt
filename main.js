@@ -346,10 +346,7 @@ function renderPage(product) {
     decision.append(div);
     productPageContent.append(decision);
   } else if (state.page === "profile-page") {
-  //   <div class="goback profile-page-goback">
-  //   <span class="material-symbols-outlined go-back"> arrow_back </span>
-  // </div>
-    
+ 
     let profilePageGoback = document.createElement("div");
     profilePageGoback.className = "goback profile-page-goback";
     let profilePageGobackIcon = document.createElement("span");
@@ -397,6 +394,7 @@ function renderPage(product) {
       profileAction4,
       profileAction5
     );
+    
     profileAvatarInfo.append(profileAvatar, profileUsername, profileActions);
     page.append(profileAvatarInfo);
 
