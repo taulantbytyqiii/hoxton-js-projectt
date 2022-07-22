@@ -1,23 +1,29 @@
 {
   "products": [
     {
-      "seller": "asd",
+      "seller": "aladin",
       "id": 1,
-      "categories": ["technology", "smartphones"],
+      "categories": [
+        "technology",
+        "smartphones"
+      ],
       "name": "Apple iPhone 11",
       "image": "https://i.ebayimg.com/images/g/BWcAAOSwxdZiMK81/s-l640.jpg",
       "price": 230,
       "dateEntered": "2021/08/10",
       "stock": 10,
-      "sold": 27,
-      "seller": "aladin",
+      "sold": 29,
       "shipping": 32,
       "images": [],
       "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 2,
-      "categories": ["technology", "gaming", "gamingconsoles"],
+      "categories": [
+        "technology",
+        "gaming",
+        "gamingconsoles"
+      ],
       "name": "Sony Playstation 4",
       "image": "https://m.media-amazon.com/images/I/71PGvPXpk5L._SL1500_.jpg",
       "price": 120,
@@ -31,7 +37,11 @@
     },
     {
       "id": 3,
-      "categories": ["clothes", "men", "jeans"],
+      "categories": [
+        "clothes",
+        "men",
+        "jeans"
+      ],
       "name": "DARK WASH BOOT JEANS",
       "image": "https://img.hollisterco.com/is/image/anf/KIC_331-7300-1302-276_prod1?policy=product-large",
       "price": 49.99,
@@ -45,7 +55,11 @@
     },
     {
       "id": 4,
-      "categories": ["clothes", "men", "t-shirts"],
+      "categories": [
+        "clothes",
+        "men",
+        "t-shirts"
+      ],
       "name": "LOGO GRAPHIC TEE 5-PACK",
       "image": "https://img.hollisterco.com/is/image/anf/KIC_323-2096-3058-100_model2?policy=product-large",
       "price": 30,
@@ -59,7 +73,11 @@
     },
     {
       "id": 5,
-      "categories": ["technology", "gaming", "monitors"],
+      "categories": [
+        "technology",
+        "gaming",
+        "monitors"
+      ],
       "name": "Alienware 34 Curved QD-OLED Gaming Monitor - AW3423DW",
       "image": "https://snpi.dell.com/snp/images/products/large/en-us~210-BCYE_V2/210-BCYE_V2.jpg",
       "price": 1200,
@@ -73,7 +91,11 @@
     },
     {
       "id": 6,
-      "categories": ["technology", "gaming", "monitors"],
+      "categories": [
+        "technology",
+        "gaming",
+        "monitors"
+      ],
       "name": "Alienware 38 Curved Gaming Monitor - AW3821DW",
       "image": "https://snpi.dell.com/snp/images/products/large/en-us~210-AXVG_v1/210-AXVG_v1.jpg",
       "price": 500,
@@ -87,7 +109,10 @@
     },
     {
       "id": 7,
-      "categories": ["clothes", "women"],
+      "categories": [
+        "clothes",
+        "women"
+      ],
       "name": "OVERSIZED LINEN BLEND SHORT-SLEEVE SHIRT",
       "image": "https://img.hollisterco.com/is/image/anf/KIC_340-2137-0653-700_prod1?policy=product-large",
       "price": 30,
@@ -101,7 +126,10 @@
     },
     {
       "id": 8,
-      "categories": ["cpu", "pc hardware"],
+      "categories": [
+        "cpu",
+        "pc hardware"
+      ],
       "name": "Procesor Intel Core i9-12900",
       "image": "https://hhstsyoejx.gjirafa.net/gj50/img/189079/img/0.jpg",
       "price": 654,
@@ -115,7 +143,10 @@
     },
     {
       "id": 9,
-      "categories": ["cpu", "pc hardware"],
+      "categories": [
+        "cpu",
+        "pc hardware"
+      ],
       "name": "Procesor AMD Ryzen 5 4600G",
       "image": "https://hhstsyoejx.gjirafa.net/gj50/img/188016/img/0.jpg",
       "price": 930,
@@ -132,7 +163,10 @@
     },
     {
       "id": 10,
-      "categories": ["cpu", "pc hardware"],
+      "categories": [
+        "cpu",
+        "pc hardware"
+      ],
       "name": "Procesor Intel Core i5-12600",
       "image": "https://hhstsyoejx.gjirafa.net/gj50/img/176649/img/0.jpg",
       "price": 190,
@@ -149,7 +183,11 @@
     },
     {
       "id": 11,
-      "categories": ["gpus", "pc hardware", "gaming"],
+      "categories": [
+        "gpus",
+        "pc hardware",
+        "gaming"
+      ],
       "name": "Kartë grafike ASUS Dual GeForce RTX 3050 OC Edition 8GB NVIDIA GDDR6",
       "image": "https://hhstsyoejx.gjirafa.net/gj50/img/188974/img/0.jpg",
       "price": 654,
@@ -166,7 +204,11 @@
     },
     {
       "id": 12,
-      "categories": ["gpus", "pc hardware", "gaming"],
+      "categories": [
+        "gpus",
+        "pc hardware",
+        "gaming"
+      ],
       "name": "Kartë grafike Zotac GeForce RTX 3090 Trinity",
       "image": "https://hhstsyoejx.gjirafa.net/gj50/img/184577/img/0.jpg",
       "price": 1799,
@@ -183,7 +225,11 @@
     },
     {
       "id": 13,
-      "categories": ["monitors", "pc hardware", "gaming"],
+      "categories": [
+        "monitors",
+        "pc hardware",
+        "gaming"
+      ],
       "name": "Monitor MSI Gaming Optix MAG281URF - LED 27.9, 4K UHD, i zi",
       "image": "https://hhstsyoejx.gjirafa.net/gj50/img/178530/img/0.jpg",
       "price": 817,
@@ -200,7 +246,11 @@
     },
     {
       "id": 14,
-      "categories": ["monitors", "pc hardware", "gaming"],
+      "categories": [
+        "monitors",
+        "pc hardware",
+        "gaming"
+      ],
       "name": "Monitor MSI Gaming Optix MAG281URF - LED 27.9, 4K UHD, i zi",
       "image": "https://hhstsyoejx.gjirafa.net/gj50/img/136290/img/0.jpg",
       "price": 482,
@@ -217,7 +267,9 @@
     },
     {
       "id": 15,
-      "categories": ["cameras"],
+      "categories": [
+        "cameras"
+      ],
       "name": "Fotoaparat Fujifilm Instax Wide 300 EX D, i bardhë/ kaftë",
       "image": "https://hhstsyoejx.gjirafa.net/gj50/img/189275/img/0.jpg",
       "price": 129,
@@ -234,7 +286,9 @@
     },
     {
       "id": 16,
-      "categories": ["cameras"],
+      "categories": [
+        "cameras"
+      ],
       "name": "Kamerë Fujifilm X-T30 II, e zezë",
       "image": "https://hhstsyoejx.gjirafa.net/gj50/img/172477/img/0.jpg",
       "price": 971,
@@ -243,12 +297,17 @@
       "sold": 2,
       "seller": "aladin",
       "shipping": 32,
-      "images": ["https://hhstsyoejx.gjirafa.net/gj50/img/172477/img/1.jpg"],
+      "images": [
+        "https://hhstsyoejx.gjirafa.net/gj50/img/172477/img/1.jpg"
+      ],
       "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 17,
-      "categories": ["laptops", "macbook"],
+      "categories": [
+        "laptops",
+        "macbook"
+      ],
       "name": "Laptop Apple MacBook Pro 13.3'' (Touch Bar), M2 8-bërthama, 16 GB, 512 GB, 10-bërthama GPU, i argjendtë (M2, 2022), INT",
       "image": "https://hhstsyoejx.gjirafa.net/gj50/img/188922/img/0.jpg",
       "price": 2240,
@@ -257,12 +316,17 @@
       "sold": 12,
       "seller": "amer",
       "shipping": 32,
-      "images": ["https://hhstsyoejx.gjirafa.net/gj50/img/188922/img/2.jpg"],
+      "images": [
+        "https://hhstsyoejx.gjirafa.net/gj50/img/188922/img/2.jpg"
+      ],
       "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 18,
-      "categories": ["laptops", "macbook"],
+      "categories": [
+        "laptops",
+        "macbook"
+      ],
       "name": "Laptop Apple MacBook Pro 14, 14.2, M1 Pro 10-bërthamor, 32GB RAM LPDDR4X, 512GB SSD, GPU 14-bërthamore, i hirtë hapësire",
       "image": "https://hhstsyoejx.gjirafa.net/gj50/img/170841/img/0.jpg",
       "price": 2999,
@@ -271,12 +335,17 @@
       "sold": 4,
       "seller": "amer",
       "shipping": 32,
-      "images": ["https://hhstsyoejx.gjirafa.net/gj50/img/170841/img/2.jpg"],
+      "images": [
+        "https://hhstsyoejx.gjirafa.net/gj50/img/170841/img/2.jpg"
+      ],
       "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 19,
-      "categories": ["laptops", "hp"],
+      "categories": [
+        "laptops",
+        "hp"
+      ],
       "name": "Laptop HP ZBook Power 15 G9, 15.6'', Intel Core i7, 32 GB RAM, 512 GB SSD, NVIDIA RTX A1000, i hirtë",
       "image": "https://hhstsyoejx.gjirafa.net/gj50/img/187287/img/0.jpg",
       "price": 2206,
@@ -293,7 +362,10 @@
     },
     {
       "id": 20,
-      "categories": ["smartphones", "xiaomi"],
+      "categories": [
+        "smartphones",
+        "xiaomi"
+      ],
       "name": "Celular Xiaomi Redmi 10 2022, 6.5, 4GB RAM, 64GB, Sea Blue",
       "image": "https://hhstsyoejx.gjirafa.net/gj50/img/187582/img/0.jpg",
       "price": 218,
@@ -302,18 +374,24 @@
       "sold": 5,
       "seller": "amer",
       "shipping": 32,
-      "images": ["https://hhstsyoejx.gjirafa.net/gj50/img/187582/img/1.jpg"],
+      "images": [
+        "https://hhstsyoejx.gjirafa.net/gj50/img/187582/img/1.jpg"
+      ],
       "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
     },
     {
       "id": 21,
-      "categories": ["shoes", "men", "nike"],
+      "categories": [
+        "shoes",
+        "men",
+        "nike"
+      ],
       "name": "Nike Air Zoom Pegasus 39",
       "image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/9a50da4b-eead-4330-8a03-05fa4957f765/air-zoom-pegasus-39-mens-road-running-shoes-d4dvtm.png",
       "price": 130,
       "dateEntered": "2021/08/10",
       "stock": 40,
-      "sold": 5,
+      "sold": 6,
       "seller": "amer",
       "shipping": 32,
       "images": [
@@ -327,7 +405,11 @@
     },
     {
       "id": 22,
-      "categories": ["shoes", "men", "nike"],
+      "categories": [
+        "shoes",
+        "men",
+        "nike"
+      ],
       "name": "Nike Wildhorse 7",
       "image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/da172fd6-9c31-4c00-a621-81b79c46c5c8/wildhorse-7-mens-trail-running-shoes-rJ6R7V.png",
       "price": 130,
@@ -347,7 +429,11 @@
     },
     {
       "id": 23,
-      "categories": ["shoes", "men", "nike"],
+      "categories": [
+        "shoes",
+        "men",
+        "nike"
+      ],
       "name": "Nike Air Zoom Pegasus FlyEase",
       "image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/70ad1a75-5216-4890-8262-a2985bb321b6/air-zoom-pegasus-flyease-mens-easy-on-off-road-running-shoes-extra-wide-7W5wmc.png",
       "price": 130,
@@ -367,13 +453,17 @@
     },
     {
       "id": 24,
-      "categories": ["shoes", "men", "nike"],
+      "categories": [
+        "shoes",
+        "men",
+        "nike"
+      ],
       "name": "Nike Air Zoom Tempo Next% FlyEase",
       "image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/c1b22048-e2a3-4385-b084-04b3302825c7/air-zoom-tempo-next-flyease-mens-easy-on-off-road-running-shoes-jrvsrL.png",
       "price": 139,
       "dateEntered": "2021/08/10",
       "stock": 40,
-      "sold": 5,
+      "sold": 0,
       "seller": "amer",
       "shipping": 32,
       "images": [
@@ -384,17 +474,83 @@
         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/616d7824-b723-46f9-9338-8e06dd80cebc/air-zoom-tempo-next-flyease-mens-easy-on-off-road-running-shoes-jrvsrL.png"
       ],
       "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
+    },
+    {
+      "categories": [
+        "clothes",
+        "men",
+        "adidas",
+        ""
+      ],
+      "name": "SAVAGE TRAIL SHOES",
+      "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto,t_ivy/39d17492a6254ee48d5aaec5001d1bd5_faec/Savage_Trail_Shoes_Beige_HQ6154_HM16.jpg",
+      "price": 180,
+      "stock": 12,
+      "shipping": 20,
+      "seller": "Redi",
+      "desc": "Sand / Sandy Beige / Medium Dark Khaki",
+      "images": [
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto,t_ivy/c269a2ade7af48f7bb2daec5001cdcfb_faec/Savage_Trail_Shoes_Beige_HQ6154_HM17_hover.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto,t_ivy/0cd589d73e4547ceaf36aec50021e062_faec/Savage_Trail_Shoes_Beige_HQ6154_HM20.jpg"
+      ],
+      "sold": 0,
+      "id": 26
     }
   ],
   "categories": [
-    ["Men", "Women", "Jeans", "T-shirts", "Clothes"],
-    ["Nike", "Adidas", "Jordan", "Clarks", "Shoes"],
-    ["Apple", "Xiaomi", "Samsung", "Smartphones"],
-    ["Gamingconsoles", "Monitors", "GPUs", "Keyboards", "Mouses", "Gaming"],
-    ["CPU", "Motherboard", "ssd", "hdd", "GPUs", "Monitors", "PC hardware"],
-    ["Cameras"],
-    ["Cosmetics"],
-    ["Macbook", "HP", "Laptops"],
-    ["Nike", "Amazon", "Steam", "Giftcards"]
+    [
+      "Men",
+      "Women",
+      "Jeans",
+      "T-shirts",
+      "Clothes"
+    ],
+    [
+      "Nike",
+      "Adidas",
+      "Jordan",
+      "Clarks",
+      "Shoes"
+    ],
+    [
+      "Apple",
+      "Xiaomi",
+      "Samsung",
+      "Smartphones"
+    ],
+    [
+      "Gamingconsoles",
+      "Monitors",
+      "GPUs",
+      "Keyboards",
+      "Mouses",
+      "Gaming"
+    ],
+    [
+      "CPU",
+      "Motherboard",
+      "ssd",
+      "hdd",
+      "GPUs",
+      "Monitors",
+      "PC hardware"
+    ],
+    [
+      "Cameras"
+    ],
+    [
+      "Cosmetics"
+    ],
+    [
+      "Macbook",
+      "HP",
+      "Laptops"
+    ],
+    [
+      "Nike",
+      "Amazon",
+      "Steam",
+      "Giftcards"
+    ]
   ]
 }

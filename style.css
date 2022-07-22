@@ -86,6 +86,8 @@ header {
 .main-section {
   z-index: 1000;
   overflow-y: scroll;
+  padding-bottom: 100px;
+  margin-bottom: 100px;
 }
 .main-section::-webkit-scrollbar {
   display: none;
@@ -211,6 +213,7 @@ main {
   justify-content: start;
   gap: 30px;
   padding: 17px;
+  margin-bottom: 100px;
 }
 
 .product {
@@ -638,6 +641,7 @@ footer {
   display: grid;
   gap: 30px;
   justify-content: end;
+  align-content: start;
   overflow-y: scroll;
 }
 .product-other-images::-webkit-scrollbar {
@@ -842,7 +846,7 @@ footer {
   width: 100vw;
   padding: 0px 300px;
   padding-top: 30px;
-  position: relative;
+  position: auto;
 }
 .profile-page-goback {
   margin: 0px;
@@ -910,6 +914,83 @@ footer {
   background-color: white;
   padding: 30px;
   max-height: 230px;
+}
+.action {
+  display: inline;
+  margin-top: 30px;
+  margin-right: 20px;
+  height: 70px;
+  /* width: 200px; */
+}
+.gobck {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 50%;
+}
+.go-bck {
+  width: 50px;
+  height: 50px;
+  color: black;
+}
+.profileForm {
+  height: 70px;
+  border: none;
+  outline: none;
+}
+.profile-input {
+  height: 70px;
+  width: 500px;
+  border-radius: 38px;
+  padding: 5px;
+  border: 2px solid #aaaaaa;
+  outline: none;
+}
+.pass-input {
+  height: 70px;
+  width: 200px;
+  border-radius: 38px;
+  padding: 5px;
+  border: 2px solid #aaaaaa;
+  outline: none;
+  margin-right: 30px;
+}
+.pass-message {
+  font-size: 15px;
+  display: inline;
+  border: none;
+  background-color: none;
+  box-shadow: none;
+  color: red;
+}
+.pass-message:hover {
+  background-color: transparent;
+  color: black;
+}
+.passed-message {
+  font-size: 13px;
+  display: inline;
+  border: none;
+  background-color: none;
+  box-shadow: none;
+  color: green;
+}
+/* .pass-submit {
+  height: 30px;
+} */
+.passed-message:hover {
+  background-color: transparent;
+  color: black;
+}
+.sell-your-products h4 {
+  font-family: arial;
+  font-size: 15px;
+  margin-bottom: 5px;
+  margin-top: 7px;
+}
+.sell-your-products input {
+  height: 30px;
+  margin-right: 5px;
 }
 /* .cart-modal-desc {
   display: grid;
