@@ -12,7 +12,7 @@
       "price": 230,
       "dateEntered": "2021/08/10",
       "stock": 10,
-      "sold": 27,
+      "sold": 29,
       "shipping": 32,
       "images": [],
       "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
@@ -391,7 +391,7 @@
       "price": 130,
       "dateEntered": "2021/08/10",
       "stock": 40,
-      "sold": 5,
+      "sold": 6,
       "seller": "amer",
       "shipping": 32,
       "images": [
@@ -463,7 +463,7 @@
       "price": 139,
       "dateEntered": "2021/08/10",
       "stock": 40,
-      "sold": 5,
+      "sold": 0,
       "seller": "amer",
       "shipping": 32,
       "images": [
@@ -477,69 +477,24 @@
     },
     {
       "categories": [
-        "smartphones",
-        "xiaomi",
-        "",
-        ""
-      ],
-      "name": "adasd",
-      "image": "https://hhstsyoejx.gjirafa.net/gj50/img/187582/img/1.jpg",
-      "price": 32,
-      "stock": 1,
-      "shipping": 32,
-      "seller": "abc",
-      "desc": "asdad",
-      "images": [
-        "https://hhstsyoejx.gjirafa.net/gj50/img/187582/img/1.jpg",
-        "https://hhstsyoejx.gjirafa.net/gj50/img/187582/img/1.jpg",
-        "https://hhstsyoejx.gjirafa.net/gj50/img/187582/img/1.jpg",
-        ""
-      ],
-      "id": 25
-    },
-    {
-      "categories": [
         "clothes",
-        "",
-        "",
+        "men",
+        "adidas",
         ""
       ],
-      "name": "asdsa",
-      "image": "https://hhstsyoejx.gjirafa.net/gj50/img/172477/img/1.jpg",
-      "price": 32,
-      "stock": 2,
-      "shipping": 12,
-      "seller": "abc",
-      "desc": "saaf",
-      "images": [
-        "https://hhstsyoejx.gjirafa.net/gj50/img/172477/img/1.jpg",
-        "https://hhstsyoejx.gjirafa.net/gj50/img/172477/img/1.jpg",
-        "",
-        ""
-      ],
-      "id": 26
-    },
-    {
-      "categories": [
-        "technology",
-        "",
-        "",
-        ""
-      ],
-      "name": "tv",
-      "image": "https://hhstsyoejx.gjirafa.net/gj50/img/168284/img/0.jpg",
-      "price": 889,
-      "stock": 2,
-      "shipping": 32,
+      "name": "SAVAGE TRAIL SHOES",
+      "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto,t_ivy/39d17492a6254ee48d5aaec5001d1bd5_faec/Savage_Trail_Shoes_Beige_HQ6154_HM16.jpg",
+      "price": 180,
+      "stock": 12,
+      "shipping": 20,
       "seller": "Redi",
-      "desc": "tvtvtvtv",
+      "desc": "Sand / Sandy Beige / Medium Dark Khaki",
       "images": [
-        "https://hhstsyoejx.gjirafa.net/gj50/img/168284/thumb/1.jpg",
-        "",
-        "",
-        ""
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto,t_ivy/c269a2ade7af48f7bb2daec5001cdcfb_faec/Savage_Trail_Shoes_Beige_HQ6154_HM17_hover.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto,t_ivy/0cd589d73e4547ceaf36aec50021e062_faec/Savage_Trail_Shoes_Beige_HQ6154_HM20.jpg"
       ],
-      "id": 27
+      "sold": 0,
+      "id": 26
     }
   ],
   "categories": [

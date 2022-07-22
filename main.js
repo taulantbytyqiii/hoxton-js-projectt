@@ -200,6 +200,16 @@ function renderPage(product) {
       productOtherImageContainer.append(productOtherImage);
       productOtherImages.append(productOtherImageContainer);
     }
+    let productOtherImageContainer = document.createElement("div");
+    productOtherImageContainer.addEventListener("click", function () {
+      productThumbnailImage.src = product.image;
+    });
+    productOtherImageContainer.className = "product-other-image-container";
+    let productOtherImage = document.createElement("img");
+    productOtherImage.className = "product-other-image";
+    productOtherImage.src = product.image;
+    productOtherImageContainer.append(productOtherImage);
+    productOtherImages.prepend(productOtherImageContainer);
     // productOtherImageContainer2.append(productOtherImage2);
     // productOtherImages.append(productOtherImageContainer2);
     // productPageContent.append(productOtherImages);
@@ -326,6 +336,11 @@ function renderPage(product) {
     productButtonBuyNow.className = "productt-button";
     productButtonBuyNow.textContent = "Buy now";
     productButtonBuyNow.addEventListener("click", () => {
+      if (!state.user) {
+        div.textContent = "Not loged in";
+        div.style = "color: red;";
+        return;
+      }
       if (state.user.balance < product.price + product.shipping) {
         div.textContent = "Not enough balance";
         div.style = "color: red;";
@@ -333,6 +348,7 @@ function renderPage(product) {
       } else {
         div.textContent = "Purchase was successful";
         div.style = "color: green;";
+        productSold.textContent = `Sold ${++product.sold}`;
         buyProduct(product);
       }
     });
@@ -536,12 +552,15 @@ function renderPage(product) {
         submit.type = "submit";
         submit.className = "profile-action action pass-submit";
         let profileInput = document.createElement("input");
+        profileInput.type = "password";
         profileInput.placeholder = "Type old password";
         profileInput.className = "pass-input";
         let profileInput1 = document.createElement("input");
+        profileInput1.type = "password";
         profileInput1.placeholder = "Type new password";
         profileInput1.className = "pass-input";
         let profileInput2 = document.createElement("input");
+        profileInput2.type = "password";
         profileInput2.placeholder = "Reconfirm new password";
         profileInput2.className = "pass-input";
         let message = document.createElement("div");
@@ -582,12 +601,30 @@ function renderPage(product) {
           seller: state.user.username,
           desc: el5Input.value,
           images: [
-            el6Input.value,
-            el6Input2.value,
-            el6Input3.value,
-            el6Input4.value,
+            // el6Input.value,
+            // el6Input2.value,
+            // el6Input3.value,
+            // el6Input4.value,
           ],
+          sold: 0,
+          id:
+            JSON.parse(
+              JSON.stringify(state.products[state.products.length - 1].id)
+            ) + 1,
         };
+        console.log(addedProduct);
+        if (el6Input.value !== "") {
+          addedProduct.images.push(el6Input.value);
+        }
+        if (el6Input2.value !== "") {
+          addedProduct.images.push(el6Input2.value);
+        }
+        if (el6Input3.value !== "") {
+          addedProduct.images.push(el6Input3.value);
+        }
+        if (el6Input4.value !== "") {
+          addedProduct.images.push(el6Input4.value);
+        }
         state.user.selling.push(addedProduct);
         fetch("http://localhost:3006/products", {
           method: "POST",
@@ -820,6 +857,9 @@ function renderPage(product) {
         removeBtn.className = "cart-prod-info cart-prod-remove-btn";
         removeBtn.textContent = "Remove from selling list";
         removeBtn.addEventListener("click", function () {
+          fetch(`http://localhost:3006/products/${state.user.selling[i].id}`, {
+            method: "DELETE",
+          });
           let item = JSON.parse(
             JSON.stringify(state.user.selling[state.user.selling.length - 1])
           );
@@ -983,7 +1023,7 @@ function createFooter() {
   footer.append(divEl, footerA);
 }
 
-createFooter();
+// createFooter();
 
 //Function to get the products from DB
 
@@ -1624,6 +1664,13 @@ function addToCart(product) {
 }
 //Function to buy a product
 function buyProduct(product) {
+  fetch(`http://localhost:3006/products/${product.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: `${JSON.stringify(product)}`,
+  });
   state.user.bought.push(product);
   state.user.balance -= product.price;
   fetch(`http://localhost:3007/users/${state.user.id}`, {

@@ -98,7 +98,6 @@ header {
   padding: 40px 280px 0px 280px;
   width: 100%;
   margin-top: 80px;
-  overflow-y: scroll;
 }
 main {
   position: relative;
@@ -642,6 +641,7 @@ footer {
   display: grid;
   gap: 30px;
   justify-content: end;
+  align-content: start;
   overflow-y: scroll;
 }
 .product-other-images::-webkit-scrollbar {
