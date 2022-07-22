@@ -120,6 +120,7 @@ function createRightHeaderSide() {
       state.page = "profile-page";
       document.querySelector("#profile-pag").id = "profile-page";
       state.page = "profile-page";
+      renderPage();
     });
     if (state.user.onCart.length) {
       let onCartNumber = document.createElement("div");
@@ -143,6 +144,7 @@ function renderPage(product) {
     document.querySelector(".main-container").style = "display: none;";
     modal.style = "display: none;";
     state.page = "profile-page";
+    page.style = "display: grid;";
 
     let h1El = document.createElement("h1");
     h1El.className = "hoxstore-title";
@@ -346,49 +348,339 @@ function renderPage(product) {
     decision.append(div);
     productPageContent.append(decision);
   } else if (state.page === "profile-page") {
-  //   <div class="goback profile-page-goback">
-  //   <span class="material-symbols-outlined go-back"> arrow_back </span>
-  // </div>
-    
+    //   <div class="goback profile-page-goback">
+    //   <span class="material-symbols-outlined go-back"> arrow_back </span>
+    // </div>
+    page = document.querySelector("#profile-page");
     let profilePageGoback = document.createElement("div");
     profilePageGoback.className = "goback profile-page-goback";
     let profilePageGobackIcon = document.createElement("span");
     profilePageGobackIcon.className = "material-symbols-outlined go-back";
     profilePageGobackIcon.textContent = "arrow_back";
     profilePageGoback.append(profilePageGobackIcon);
+
     page.append(profilePageGoback);
     profilePageGoback.addEventListener("click", () => {
-      state.page = "home-page";
-      render();
+      page.id = "profile-pag";
+      page.innerHTML = "";
+      page.className = "";
+      document.querySelector("#profile-or-product-page").style =
+        "display: none;";
+      header.style = "display: grid;";
+      document.querySelector(".main-container").style = "display: auto;";
+      modal.style = "display: grid;";
+      state.page = "";
+      getProducts();
+      // render();
     });
 
     let profileAvatarInfo = document.createElement("div");
     profileAvatarInfo.className = "profile-avatar-info";
     let profileAvatar = document.createElement("img");
     profileAvatar.className = "profile-page-avatar";
-    profileAvatar.src = "./profile.png";
+    profileAvatar.src = state.user.userimage;
     let profileUsername = document.createElement("h3");
     profileUsername.className = "profile-username";
     profileUsername.textContent = state.user.username;
-
 
     let profileActions = document.createElement("div");
     profileActions.className = "profile-actions";
 
     let profileAction = document.createElement("div");
     profileAction.className = "profile-action";
+    profileAction.textContent = "Order history";
 
     let profileAction2 = document.createElement("div");
     profileAction2.className = "profile-action";
+    profileAction2.textContent = "Your products";
 
     let profileAction3 = document.createElement("div");
     profileAction3.className = "profile-action";
+    profileAction3.textContent = "Edit profile";
+    profileAction3.addEventListener("click", function () {
+      actionArea.innerHTML = "";
+      let action = document.createElement("div");
+      action.textContent = "Change profile picture";
+      action.className = "profile-action action";
+      action.addEventListener("click", function () {
+        actionArea.innerHTML = "";
+        let divgobck = document.createElement("div");
+        divgobck.className = "action gobck";
+        let gobck = document.createElement("span");
+        gobck.className = "material-symbols-outlined go-bck";
+        gobck.textContent = "arrow_back";
+        gobck.addEventListener("click", function () {
+          actionArea.innerHTML = "";
+          action1.textContent = "Change username";
+          action1.className = "profile-action action";
+          action2.textContent = "Change password";
+          action2.className = "profile-action action";
+          actionArea.append(action, action1, action2);
+        });
+        divgobck.appendChild(gobck);
+        actionArea.prepend(divgobck);
+        actionArea.append(action);
+        action1.textContent = "";
+        action2.textContent = "";
+        let profileForm = document.createElement("form");
+        profileForm.className = "action profileForm";
+        profileForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          state.user.userimage = profileInput.value;
+          profileAvatar.src = state.user.userimage;
+          fetch(`http://localhost:3007/users/${state.user.id}`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: `${JSON.stringify(state.user)}`,
+          });
+        });
+        let profileInput = document.createElement("input");
+        profileInput.placeholder = "Type an image URL";
+        profileInput.className = "profile-input";
+        profileForm.append(profileInput);
+        actionArea.append(profileForm);
+      });
+      let action1 = document.createElement("div");
+      action1.textContent = "Change username";
+      action1.className = "profile-action action";
+      action1.addEventListener("click", function () {
+        actionArea.innerHTML = "";
+        let divgobck = document.createElement("div");
+        divgobck.className = "action gobck";
+        let gobck = document.createElement("span");
+        gobck.className = "material-symbols-outlined go-bck";
+        gobck.textContent = "arrow_back";
+        gobck.addEventListener("click", function () {
+          actionArea.innerHTML = "";
+          action.textContent = "Change profile picture";
+          action.className = "profile-action action";
+          action2.textContent = "Change password";
+          action2.className = "profile-action action";
+          actionArea.append(action, action1, action2);
+        });
+        divgobck.appendChild(gobck);
+        actionArea.prepend(divgobck);
+        actionArea.append(action1);
+        action.textContent = "";
+        action2.textContent = "";
+        let profileForm = document.createElement("form");
+        profileForm.className = "action profileForm";
+        profileForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          state.user.username = profileInput.value;
+          profileUsername.textContent = state.user.username;
+          fetch(`http://localhost:3007/users/${state.user.id}`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: `${JSON.stringify(state.user)}`,
+          });
+        });
+        let profileInput = document.createElement("input");
+        profileInput.placeholder = "Type a new username";
+        profileInput.className = "profile-input";
+        profileForm.append(profileInput);
+        actionArea.append(profileForm);
+      });
+      let action2 = document.createElement("div");
+      action2.textContent = "Change password";
+      action2.className = "profile-action action";
+      action2.addEventListener("click", function () {
+        actionArea.innerHTML = "";
+        let divgobck = document.createElement("div");
+        divgobck.className = "action gobck";
+        let gobck = document.createElement("span");
+        gobck.className = "material-symbols-outlined go-bck";
+        gobck.textContent = "arrow_back";
+        gobck.addEventListener("click", function () {
+          actionArea.innerHTML = "";
+          action.textContent = "Change profile picture";
+          action.className = "profile-action action";
+          action1.textContent = "Change username";
+          action1.className = "profile-action action";
+          actionArea.append(action, action1, action2);
+        });
+        divgobck.appendChild(gobck);
+        actionArea.prepend(divgobck);
+        actionArea.append(action2);
+        action.textContent = "";
+        action1.textContent = "";
+        let profileForm = document.createElement("form");
+        profileForm.className = "action profileForm";
+        profileForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          if (profileInput.value !== state.user.password) {
+            message.textContent = "Error";
+          } else {
+            message.textContent = "";
+            if (profileInput1.value === profileInput2.value) {
+              message.textContent = "Changed password succesfully";
+              message.className = "passed-message profile-action ";
+              state.user.password = profileInput1.value;
+              fetch(`http://localhost:3007/users/${state.user.id}`, {
+                method: "PUT",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: `${JSON.stringify(state.user)}`,
+              });
+            } else {
+              message.textContent = "Error";
+            }
+          }
+        });
+        let submit = document.createElement("input");
+        submit.type = "submit";
+        submit.className = "profile-action action pass-submit";
+        let profileInput = document.createElement("input");
+        profileInput.placeholder = "Type old password";
+        profileInput.className = "pass-input";
+        let profileInput1 = document.createElement("input");
+        profileInput1.placeholder = "Type new password";
+        profileInput1.className = "pass-input";
+        let profileInput2 = document.createElement("input");
+        profileInput2.placeholder = "Reconfirm new password";
+        profileInput2.className = "pass-input";
+        let message = document.createElement("div");
+        message.className = "pass-message profile-action";
+
+        profileForm.append(
+          profileInput,
+          profileInput1,
+          profileInput2,
+          message,
+          submit
+        );
+        actionArea.append(profileForm);
+      });
+      actionArea.append(action, action1, action2);
+    });
 
     let profileAction4 = document.createElement("div");
     profileAction4.className = "profile-action";
+    profileAction4.textContent = "Sell your products";
+    profileAction4.addEventListener("click", function () {
+      actionArea.innerHTML = "";
+      let addProductForm = document.createElement("form");
+      addProductForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let addedProduct = {
+          categories: [
+            el7Input.value,
+            el7Input2.value,
+            el7Input3.value,
+            el7Input4.value,
+          ],
+          name: el2Input.value,
+          image: el1Input.value,
+          price: Number(el3Input.value),
+          stock: Number(el8Input.value),
+          shipping: Number(el4Input.value),
+          seller: state.user.username,
+          desc: el5Input.value,
+          images: [
+            el6Input.value,
+            el6Input2.value,
+            el6Input3.value,
+            el6Input4.value,
+          ],
+        };
+        state.user.selling.push(addedProduct);
+        fetch("http://localhost:3006/products", {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: `${JSON.stringify(addedProduct)}`,
+        });
+        fetch(`http://localhost:3007/users/${state.user.id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: `${JSON.stringify(state.user)}`,
+        });
+      });
+      let divEl1 = document.createElement("div");
+      divEl1.className = "sell-your-products";
+      let el1 = document.createElement("h4");
+      el1.textContent = "Add a product image";
+      let el1Input = document.createElement("input");
+      divEl1.append(el1, el1Input);
+      let divEl2 = document.createElement("div");
+      divEl2.className = "sell-your-products";
+      let el2 = document.createElement("h4");
+      el2.textContent = "Add a product title";
+      let el2Input = document.createElement("input");
+      divEl2.append(el2, el2Input);
+      let divEl3 = document.createElement("div");
+      divEl3.className = "sell-your-products";
+      let el3 = document.createElement("h4");
+      el3.textContent = "Add product price";
+      let el3Input = document.createElement("input");
+      el3Input.type = "number";
+      divEl3.append(el3, el3Input);
+      let divEl4 = document.createElement("div");
+      divEl4.className = "sell-your-products";
+      let el4 = document.createElement("h4");
+      el4.textContent = "Add a product shipping price";
+      let el4Input = document.createElement("input");
+      el4Input.type = "number";
+      let divEl5 = document.createElement("div");
+      divEl5.className = "sell-your-products";
+      let el5 = document.createElement("h4");
+      el5.textContent = "Add product descripiton";
+      let el5Input = document.createElement("input");
+      let divEl6 = document.createElement("div");
+      divEl6.className = "sell-your-products";
+      let el6 = document.createElement("h4");
+      el6.textContent = "Add other images of the product";
+      let el6Input = document.createElement("input");
+      let el6Input2 = document.createElement("input");
+      let el6Input3 = document.createElement("input");
+      let el6Input4 = document.createElement("input");
+      let divEl7 = document.createElement("div");
+      divEl7.className = "sell-your-products";
+      let el7 = document.createElement("h4");
+      el7.textContent = "Add product categories";
+      let el7Input = document.createElement("input");
+      let el7Input2 = document.createElement("input");
+      let el7Input3 = document.createElement("input");
+      let el7Input4 = document.createElement("input");
+      let divEl8 = document.createElement("div");
+      divEl8.className = "sell-your-products";
+      let el8 = document.createElement("h4");
+      el8.textContent = "Add product stock";
+      let el8Input = document.createElement("input");
+      el8Input.type = "number";
+      divEl4.append(el4, el4Input);
+      divEl5.append(el5, el5Input);
+      divEl8.append(el8, el8Input);
+      divEl6.append(el6, el6Input, el6Input2, el6Input3, el6Input4);
+      divEl7.append(el7, el7Input, el7Input2, el7Input3, el7Input4);
+      let addProdSubmit = document.createElement("input");
+      addProdSubmit.type = "submit";
+      addProductForm.append(
+        divEl1,
+        divEl2,
+        divEl3,
+        divEl4,
+        divEl5,
+        divEl6,
+        divEl7,
+        divEl7,
+        divEl8,
+        addProdSubmit
+      );
+      actionArea.appendChild(addProductForm);
+    });
 
     let profileAction5 = document.createElement("div");
     profileAction5.className = "profile-action";
+    profileAction5.textContent = "Cart";
 
     profileActions.append(
       profileAction,
@@ -397,61 +689,256 @@ function renderPage(product) {
       profileAction4,
       profileAction5
     );
-    profileAvatarInfo.append(profileAvatar, profileUsername, profileActions);
-    page.append(profileAvatarInfo);
-
+    profileAvatarInfo.append(profileAvatar, profileUsername);
+    page.append(profileAvatarInfo, profileActions);
 
     let actionArea = document.createElement("div");
     actionArea.className = "action-area";
-    let cartProdSection = document.createElement("div");
-    cartProdSection.className = "cart-prod-section order-history-prods";
-    let cartProd = document.createElement("div");
-    cartProd.className = "cart-prod order-prod";
-    let cartProdImage = document.createElement("img");
-    cartProdImage.className = "cart-prod-image";
-    cartProdImage.src = product.image;
-    let cartProdInfos = document.createElement("div");
-    cartProdInfos.className = "cart-prod-infos";
-    let namePrice = document.createElement("div");
-    namePrice.className = "name-price";
-    let namePriceSpan = document.createElement("span");
-    namePriceSpan.className = "name-price";
-    let namePriceStrong = document.createElement("strong");
-    namePriceStrong.textContent = product.name;
-    let namePriceSpan2 = document.createElement("span");
-    namePriceSpan2.className = "name-price";
-    let namePriceStrong2 = document.createElement("strong");
-    namePriceStrong2.className = "cart-prod-price";
-    namePriceStrong2.textContent = product.price;
-    let po = document.createElement("div");
-    po.className = "po";
-    let poSpan = document.createElement("span");
-    poSpan.className = "cart-prod-info";
-    poSpan.textContent = product.description;
-    let po2 = document.createElement("div");
-    po2.className = "po";
-    let poSpan2 = document.createElement("span");
-    poSpan2.className = "cart-prod-info";
-    poSpan2.textContent = product.shipping;
+    // let cartProdSection = document.createElement("div");
+    // cartProdSection.className = "cart-prod-section order-history-prods";
 
-    cartProdInfos.append(
-      namePrice,
-      namePriceSpan,
-      namePriceStrong,
-      namePriceSpan2,
-      namePriceStrong2,
-      po,
-      poSpan,
-      po2,
-      poSpan2
-    );
-    cartProd.append(cartProdImage, cartProdInfos);
-    cartProdSection.append(cartProd);
-    actionArea.append(cartProdSection);
-    page.append(actionArea);
+    // let cartProd = document.createElement("div");
+    // cartProd.className = "cart-prod order-prod";
 
+    page.appendChild(actionArea);
+    // actionArea.appendChild(cartProdSection);
 
+    profileAction.addEventListener("click", function () {
+      actionArea.innerHTML = "";
+      let cartProdSection = document.createElement("div");
+      cartProdSection.className = "cart-prod-section order-history-prods";
+      actionArea.appendChild(cartProdSection);
+      for (let productt of state.user.bought) {
+        let cartProd = document.createElement("div");
+        cartProd.className = "cart-prod order-prod";
+        cartProdSection.appendChild(cartProd);
 
+        let cartProdImage = document.createElement("img");
+        cartProdImage.className = "cart-prod-image";
+        cartProdImage.src = productt.image;
+        let cartProdInfos = document.createElement("div");
+        cartProdInfos.className = "cart-prod-infos";
+
+        cartProd.append(cartProdImage, cartProdInfos);
+
+        let namePrice = document.createElement("div");
+        namePrice.className = "name-price";
+        let namePriceSpan = document.createElement("span");
+        namePriceSpan.className = "name-price";
+        let namePriceStrong = document.createElement("strong");
+        namePriceStrong.textContent = productt.name;
+        let namePriceSpan2 = document.createElement("span");
+        namePriceSpan2.className = "name-price";
+        let namePriceStrong2 = document.createElement("strong");
+        namePriceStrong2.className = "cart-prod-price";
+        namePriceStrong2.textContent = `$${productt.price.toFixed(2)}`;
+
+        namePriceSpan.appendChild(namePriceStrong);
+        namePriceSpan2.appendChild(namePriceStrong2);
+        namePrice.append(namePriceSpan, namePriceSpan2);
+
+        let po = document.createElement("div");
+        po.className = "po";
+        let poSpan = document.createElement("span");
+        poSpan.className = "cart-prod-info";
+        poSpan.textContent = productt.desc;
+
+        po.appendChild(poSpan);
+
+        let po2 = document.createElement("div");
+        po2.className = "po";
+        let poSpan2 = document.createElement("span");
+        poSpan2.className = "cart-prod-info";
+        poSpan2.textContent = `Shipping: $${productt.shipping.toFixed(2)}`;
+
+        po2.appendChild(poSpan2);
+
+        let div = document.createElement("div");
+
+        cartProdInfos.append(namePrice, po, po2, div);
+        cartProd.append(cartProdImage, cartProdInfos);
+      }
+    });
+    profileAction2.addEventListener("click", function () {
+      actionArea.innerHTML = "";
+      let cartProdSection = document.createElement("div");
+      cartProdSection.className = "cart-prod-section order-history-prods";
+      actionArea.appendChild(cartProdSection);
+      for (let i = 0; i < state.user.selling.length; i++) {
+        console.log("asfaf");
+        let cartProd = document.createElement("div");
+        cartProd.className = "cart-prod order-prod";
+        cartProdSection.appendChild(cartProd);
+
+        let cartProdImage = document.createElement("img");
+        cartProdImage.className = "cart-prod-image";
+        cartProdImage.src = state.user.selling[i].image;
+        let cartProdInfos = document.createElement("div");
+        cartProdInfos.className = "cart-prod-infos";
+
+        cartProd.append(cartProdImage, cartProdInfos);
+
+        let namePrice = document.createElement("div");
+        namePrice.className = "name-price";
+        let namePriceSpan = document.createElement("span");
+        namePriceSpan.className = "name-price";
+        let namePriceStrong = document.createElement("strong");
+        namePriceStrong.textContent = state.user.selling[i].name;
+        let namePriceSpan2 = document.createElement("span");
+        namePriceSpan2.className = "name-price";
+        let namePriceStrong2 = document.createElement("strong");
+        namePriceStrong2.className = "cart-prod-price";
+        namePriceStrong2.textContent = `$${state.user.selling[i].price.toFixed(
+          2
+        )}`;
+
+        namePriceSpan.appendChild(namePriceStrong);
+        namePriceSpan2.appendChild(namePriceStrong2);
+        namePrice.append(namePriceSpan, namePriceSpan2);
+
+        let po = document.createElement("div");
+        po.className = "po";
+        let poSpan = document.createElement("span");
+        poSpan.className = "cart-prod-info";
+        poSpan.textContent = state.user.selling[i].desc;
+
+        po.appendChild(poSpan);
+
+        let po2 = document.createElement("div");
+        po2.className = "po";
+        let poSpan2 = document.createElement("span");
+        poSpan2.className = "cart-prod-info";
+        poSpan2.textContent = `Shipping: $${state.user.selling[
+          i
+        ].shipping.toFixed(2)}`;
+
+        po2.appendChild(poSpan2);
+
+        let po3 = document.createElement("div");
+        po3.className = "po";
+        let removeBtn = document.createElement("button");
+        removeBtn.className = "cart-prod-info cart-prod-remove-btn";
+        removeBtn.textContent = "Remove from selling list";
+        removeBtn.addEventListener("click", function () {
+          let item = JSON.parse(
+            JSON.stringify(state.user.selling[state.user.selling.length - 1])
+          );
+          state.user.selling[state.user.selling.length - 1] = JSON.parse(
+            JSON.stringify(state.user.selling[i])
+          );
+
+          state.user.selling[i] = item;
+          console.log(
+            state.user.selling[i] === state.user.selling[state.user.selling - 1]
+          );
+          state.user.selling.pop();
+          fetch(`http://localhost:3007/users/${state.user.id}`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: `${JSON.stringify(state.user)}`,
+          });
+          cartProd.remove();
+        });
+        po3.appendChild(removeBtn);
+
+        let div = document.createElement("div");
+
+        cartProdInfos.append(namePrice, po, po2, po3, div);
+        cartProd.append(cartProdImage, cartProdInfos);
+      }
+    });
+    profileAction5.addEventListener("click", function () {
+      actionArea.innerHTML = "";
+      let cartProdSection = document.createElement("div");
+      cartProdSection.className = "cart-prod-section order-history-prods";
+      actionArea.appendChild(cartProdSection);
+      for (let i = 0; i < state.user.onCart.length; i++) {
+        console.log("asfaf");
+        let cartProd = document.createElement("div");
+        cartProd.className = "cart-prod order-prod";
+        cartProdSection.appendChild(cartProd);
+
+        let cartProdImage = document.createElement("img");
+        cartProdImage.className = "cart-prod-image";
+        cartProdImage.src = state.user.onCart[i].image;
+        let cartProdInfos = document.createElement("div");
+        cartProdInfos.className = "cart-prod-infos";
+
+        cartProd.append(cartProdImage, cartProdInfos);
+
+        let namePrice = document.createElement("div");
+        namePrice.className = "name-price";
+        let namePriceSpan = document.createElement("span");
+        namePriceSpan.className = "name-price";
+        let namePriceStrong = document.createElement("strong");
+        namePriceStrong.textContent = state.user.onCart[i].name;
+        let namePriceSpan2 = document.createElement("span");
+        namePriceSpan2.className = "name-price";
+        let namePriceStrong2 = document.createElement("strong");
+        namePriceStrong2.className = "cart-prod-price";
+        namePriceStrong2.textContent = `$${state.user.onCart[i].price.toFixed(
+          2
+        )}`;
+
+        namePriceSpan.appendChild(namePriceStrong);
+        namePriceSpan2.appendChild(namePriceStrong2);
+        namePrice.append(namePriceSpan, namePriceSpan2);
+
+        let po = document.createElement("div");
+        po.className = "po";
+        let poSpan = document.createElement("span");
+        poSpan.className = "cart-prod-info";
+        poSpan.textContent = state.user.onCart[i].desc;
+
+        po.appendChild(poSpan);
+
+        let po2 = document.createElement("div");
+        po2.className = "po";
+        let poSpan2 = document.createElement("span");
+        poSpan2.className = "cart-prod-info";
+        poSpan2.textContent = `Shipping: $${state.user.onCart[
+          i
+        ].shipping.toFixed(2)}`;
+
+        po2.appendChild(poSpan2);
+
+        let po3 = document.createElement("div");
+        po3.className = "po";
+        let removeBtn = document.createElement("button");
+        removeBtn.className = "cart-prod-info cart-prod-remove-btn";
+        removeBtn.textContent = "Remove from cart";
+        removeBtn.addEventListener("click", function () {
+          let item = JSON.parse(
+            JSON.stringify(state.user.onCart[state.user.onCart.length - 1])
+          );
+          state.user.onCart[state.user.onCart.length - 1] = JSON.parse(
+            JSON.stringify(state.user.onCart[i])
+          );
+
+          state.user.onCart[i] = item;
+          console.log(
+            state.user.onCart[i] === state.user.onCart[state.user.onCart - 1]
+          );
+          state.user.onCart.pop();
+          fetch(`http://localhost:3007/users/${state.user.id}`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: `${JSON.stringify(state.user)}`,
+          });
+          cartProd.remove();
+        });
+
+        po3.appendChild(removeBtn);
+        let div = document.createElement("div");
+
+        cartProdInfos.append(namePrice, po, po2, po3, div);
+        cartProd.append(cartProdImage, cartProdInfos);
+      }
+    });
   }
 }
 
@@ -628,6 +1115,10 @@ function createProduct(product) {
   let prodSold = document.createElement("p");
   prodSold.className = "sold";
   prodSold.textContent = `${product.sold} sold`;
+  if (product.sold === undefined) {
+    console.log("assad");
+    prodSold.textContent = "";
+  }
 
   stockDiv.append(p1, p2);
   prodImgWrapper.appendChild(prodImg);
@@ -828,7 +1319,6 @@ function renderModal() {
           passwordInput2.value
         )
       ) {
-        console.log("ti qifsha");
         nameInput.value = "";
         emailInput.value = "";
         passwordInput.value = "";
@@ -851,6 +1341,7 @@ function renderModal() {
           },
           body: JSON.stringify(newAcc),
         });
+        console.log("wow");
         modalContent.innerHTML = "";
         modalContent.innerHTML = "<h1>Account created succesfully</h1>";
         modalContent.prepend(closeBtn);
@@ -1004,8 +1495,6 @@ function renderModal() {
       index++;
     }
     prodsSecDiv.append(logoLink, bagCount, prodSecDiv);
-    console.log(total);
-    console.log(shippingTotalPrice);
     // info abt bag
     let infoAbtBag = document.createElement("div");
     infoAbtBag.className = "info-about-bag";
