@@ -12,7 +12,11 @@
       "price": 230,
       "dateEntered": "2021/08/10",
       "stock": 10,
+<<<<<<< HEAD
       "sold": 32,
+=======
+      "sold": 30,
+>>>>>>> 45542d2e4cad036d6a500e9b7e7598e5658c3370
       "shipping": 32,
       "images": [],
       "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
@@ -371,7 +375,7 @@
       "price": 218,
       "dateEntered": "2021/08/10",
       "stock": 40,
-      "sold": 5,
+      "sold": 6,
       "seller": "amer",
       "shipping": 32,
       "images": [
