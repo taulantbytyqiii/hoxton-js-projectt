@@ -330,7 +330,14 @@ function renderPage(product) {
     productButtonAddToCart.className = "productt-button add-to-cart";
     productButtonAddToCart.textContent = "Add to cart";
     productButtonAddToCart.addEventListener("click", () => {
-      addToCart(product);
+      if (state.user) {
+        addToCart(product);
+        div.textContent = "Added to cart";
+        div.style = "color: green;";
+      } else {
+        div.textContent = "Not loged in";
+        div.style = "color: red;";
+      }
     });
     let productButtonBuyNow = document.createElement("button");
     productButtonBuyNow.className = "productt-button";
@@ -613,6 +620,8 @@ function renderPage(product) {
             ) + 1,
         };
         console.log(addedProduct);
+        console.log(state.user);
+        console.log(state.user.selling);
         if (el6Input.value !== "") {
           addedProduct.images.push(el6Input.value);
         }
@@ -1373,6 +1382,7 @@ function renderModal() {
           balance: 500,
           onCart: [],
           bought: [],
+          selling: [],
         };
         fetch("http://localhost:3007/users", {
           method: "POST",

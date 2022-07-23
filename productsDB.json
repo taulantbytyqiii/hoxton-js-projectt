@@ -12,7 +12,7 @@
       "price": 230,
       "dateEntered": "2021/08/10",
       "stock": 10,
-      "sold": 29,
+      "sold": 32,
       "shipping": 32,
       "images": [],
       "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem debitis, quas et sequi, voluptates aliquid voluptate aspernatur quae nulla quisquam aut unde sunt assumenda tempore inventore eius. Hic, enim odio? Rerum quas nemo nobis excepturi corporis, ipsum iusto ab consequatur?"
@@ -65,7 +65,7 @@
       "price": 30,
       "dateEntered": "2021/08/10",
       "stock": 10,
-      "sold": 190,
+      "sold": 191,
       "seller": "aladin",
       "shipping": 32,
       "images": [],
@@ -327,7 +327,7 @@
         "laptops",
         "macbook"
       ],
-      "name": "Laptop Apple MacBook Pro 14, 14.2, M1 Pro 10-bërthamor, 32GB RAM LPDDR4X, 512GB SSD, GPU 14-bërthamore, i hirtë hapësire",
+      "name": "Laptop Apple MacBook Pro 14, 14.2, M1 Pro 10-bërthamor, 32GB RAM LPDDR4X, 512GB SSD, GPU 14-bërthamore",
       "image": "https://hhstsyoejx.gjirafa.net/gj50/img/170841/img/0.jpg",
       "price": 2999,
       "dateEntered": "2021/08/10",
@@ -495,6 +495,44 @@
       ],
       "sold": 0,
       "id": 26
+    },
+    {
+      "categories": [
+        "gaming",
+        "mouses",
+        "",
+        ""
+      ],
+      "name": "Maus Logitech G Pro X Superlight, i bardhë",
+      "image": "https://hhstsyoejx.gjirafa.net/gj50/img/144835/img/0.jpg",
+      "price": 32,
+      "stock": 2,
+      "shipping": 2,
+      "seller": "tala",
+      "desc": "asdsadas",
+      "images": [
+        "https://hhstsyoejx.gjirafa.net/gj50/img/144835/thumb/0.jpg"
+      ],
+      "sold": 0,
+      "id": 27
+    },
+    {
+      "categories": [
+        "gaming",
+        "",
+        "",
+        ""
+      ],
+      "name": "Karrigë SEN",
+      "image": "https://hhstsyoejx.gjirafa.net/gj50/img/161712/img/0.jpg",
+      "price": 320,
+      "stock": 5,
+      "shipping": 32,
+      "seller": "talta",
+      "desc": "adsadda",
+      "images": [],
+      "sold": 0,
+      "id": 28
     }
   ],
   "categories": [
